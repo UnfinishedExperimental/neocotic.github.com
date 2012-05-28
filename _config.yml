@@ -30,7 +30,7 @@ project:
     version: "1.0.0"
   iorder: &iorder
     name: iOrder
-    version: "1.1.0"
+    version: "1.1.1"
   jqueryconsole: &jqueryconsole
     name: jquery-console
     title: jQuery Console
