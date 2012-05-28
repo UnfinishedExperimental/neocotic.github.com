@@ -1,5 +1,11 @@
-/_site
+# Project generated folders #
+_site
 
+# npm generated files/folders #
+node_modules
+npm-debug.log
+
+# OS generated files #
 .DS_Store
 ehthumbs.db
 Icon?
