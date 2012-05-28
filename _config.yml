@@ -64,7 +64,7 @@ project:
   undowikipediablackout: &undowikipediablackout
     name: UndoWikipediaBlackout
     title: Undo Wikipedia Blackout
-    version: "1.0.2"
+    version: "1.2.0"
   yourlsapi: &yourlsapi
     name: yourls-api
     version: "1.0.0"
