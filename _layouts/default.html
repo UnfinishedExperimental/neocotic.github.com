@@ -18,11 +18,6 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css?{{ts_param}}">
     <link rel="stylesheet" href="/assets/css/neocotic.css?{{ts_param}}">
     <link rel="stylesheet" href="/assets/css/syntax.css?{{ts_param}}">
-    {% if page.stylesheets %}
-      {% for stylesheet in page.stylesheets %}
-        <link rel="stylesheet" href="{{stylesheet}}?{{ts_param}}">
-      {% endfor %}
-    {% endif %}
     <script>
       window.neocotic = {
           comments: {
@@ -41,11 +36,6 @@
     <script src="/assets/js/jquery.min.js?{{ts_param}}"></script>
     <script src="/assets/js/bootstrap.min.js?{{ts_param}}"></script>
     <script src="/assets/js/neocotic.js?{{ts_param}}"></script>
-    {% if page.scripts %}
-      {% for script in page.scripts %}
-        <script src="{{script}}?{{ts_param}}"></script>
-      {% endfor %}
-    {% endif %}
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
@@ -55,6 +45,11 @@
     {% for extension in site.chrome_extensions %}
       <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/{{extension}}">
     {% endfor %}
+    {% if page.resources %}
+      {% for resource in page.resources %}
+        {% if resource.script %}<script src="{{resource.script}}?{{ts_param}}"></script>{% elsif resource.stylesheet %}<link rel="stylesheet" href="{{resource.stylesheet}}?{{ts_param}}">{% endif %}
+      {% endfor %}
+    {% endif %}
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
