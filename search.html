@@ -1,16 +1,21 @@
 ---
 layout: page
-title: Search Results
+title: Search
 subtitle: Find what you're looking for?
+resources:
+  - script: https://www.google.com/jsapi
+  - script: /assets/js/search.js
+  - stylesheet: https://www.google.com/cse/style/look/default.css
+  - stylesheet: /assets/css/search.css
 ---
 <div class="row-fluid">
+  <form id="cse-input" class="form-inline well center">
+    <input name="q" type="text" class="input-xxlarge">
+    <button type="submit" class="btn">Search</button>
+  </form>
   <div id="cse" style="width: 100%">
-    <div class="progress progress-striped active" style="margin: 0 25%">
+    <div class="progress progress-striped active hide" style="margin: 0 25%">
       <div class="bar" style="width: 100%">Loading...</div>
     </div>
   </div>
-  <script src="https://www.google.com/jsapi"></script>
-  <script src="/assets/js/search.js"></script>
-  <link rel="stylesheet" href="https://www.google.com/cse/style/look/default.css">
-  <link rel="stylesheet" href="/assets/css/search.css">
 </div>

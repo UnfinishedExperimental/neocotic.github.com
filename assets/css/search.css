@@ -12,7 +12,7 @@
   background-color: #e9e9e9;
 }
 .gsc-tabHeader.gsc-tabhActive {
-  border-top-color: #ff9900;
+  border-top-color: #f90;
   border-left-color: #e9e9e9;
   border-right-color: #e9e9e9;
   background-color: #fff;
@@ -81,44 +81,49 @@ a.gsc-trailing-more-results:link {
 .gsc-cursor-box {
   border-color: #fff;
 }
-.gsc-results .gsc-cursor-box .gsc-cursor-page {
-  border-color: #e9e9e9;
+.gsc-results .gsc-cursor-box .gsc-cursor-page,
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+  border: 0;
   background-color: #fff;
   color: #08c;
 }
-.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
-  border-color: #ff9900;
-  background-color: #fff;
-  color: #08c;
+.gsc-results .gsc-cursor-box .gsc-cursor-page:hover,
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page:hover {
+  color: #005580;
+  cursor: pointer;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page:focus,
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page:focus {
+  outline: none;
 }
 .gs-promotion {
-  border-color: #336699;
+  border-color: #369;
   background-color: #fff;
 }
 .gs-promotion a.gs-title:link,
 .gs-promotion a.gs-title:link *,
 .gs-promotion .gs-snippet a:link {
-  color: #0000cc;
+  color: #00c;
 }
 .gs-promotion a.gs-title:visited,
 .gs-promotion a.gs-title:visited *,
 .gs-promotion .gs-snippet a:visited {
-  color: #0000cc;
+  color: #00c;
 }
 .gs-promotion a.gs-title:hover,
 .gs-promotion a.gs-title:hover *,
 .gs-promotion .gs-snippet a:hover {
-  color: #0000cc;
+  color: #00c;
 }
 .gs-promotion a.gs-title:active,
 .gs-promotion a.gs-title:active *,
 .gs-promotion .gs-snippet a:active {
-  color: #0000cc;
+  color: #00c;
 }
 .gs-promotion .gs-snippet,
 .gs-promotion .gs-title .gs-promotion-title-right,
 .gs-promotion .gs-title .gs-promotion-title-right *  {
-  color: #000000;
+  color: #000;
 }
 .gs-promotion .gs-visibleUrl,
 .gs-promotion .gs-visibleUrl-short {
@@ -160,7 +165,10 @@ a.gsc-trailing-more-results:link {
           border-radius: 4px;
 }
 .gsc-above-wrapper-area {
-  border-bottom-color: #eee;
+  border-bottom: 0;
+}
+.gsc-above-wrapper-area .gsc-result-info {
+  font-style: italic;
 }
 .domainLink {
   color: #999;
