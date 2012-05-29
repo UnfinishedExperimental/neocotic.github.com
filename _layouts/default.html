@@ -14,7 +14,7 @@
     {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
     {% if page.keywords %}<meta name="keywords" content="{{page.keywords}}">{% endif %}
     <meta name="author" content="Alasdair Mercer">
-    {% capture ts_param %}ts={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
+    {% capture ts_param %}_={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css?{{ts_param}}">
     <link rel="stylesheet" href="/assets/css/neocotic.css?{{ts_param}}">
     <link rel="stylesheet" href="/assets/css/syntax.css?{{ts_param}}">
