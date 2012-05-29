@@ -13,15 +13,21 @@
     {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
     {% if page.keywords %}<meta name="keywords" content="{{page.keywords}}">{% endif %}
     <meta name="author" content="Alasdair Mercer">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/neocotic.css">
-    <link rel="stylesheet" href="/assets/css/syntax.css">
+    {% capture ts_param %}ts={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css?{{ts_param}}">
+    <link rel="stylesheet" href="/assets/css/neocotic.css?{{ts_param}}">
+    <link rel="stylesheet" href="/assets/css/syntax.css?{{ts_param}}">
+    {% if page.stylesheets %}
+      {% for stylesheet in page.stylesheets %}
+        <link rel="stylesheet" href="{{stylesheet}}?{{ts_param}}">
+      {% endfor %}
+    {% endif %}
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/js/html5shiv.js?{{ts_param}}"></script>
     <![endif]-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/neocotic.js"></script>
+    <script src="/assets/js/jquery.min.js?{{ts_param}}"></script>
+    <script src="/assets/js/bootstrap.min.js?{{ts_param}}"></script>
+    <script src="/assets/js/neocotic.js?{{ts_param}}"></script>
     {% if page.share %}
       <script>
         $(function() {
@@ -36,6 +42,11 @@
 
         });
       </script>
+    {% endif %}
+    {% if page.scripts %}
+      {% for script in page.scripts %}
+        <script src="{{script}}?{{ts_param}}"></script>
+      {% endfor %}
     {% endif %}
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
