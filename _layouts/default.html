@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    {% capture pagination_title %}{% if paginator and paginator.page > 1 %}Page {{paginator.page}} &middot; {% endif %}{% endcapture %}
     {% if page.metatitle %}
-      <title>{{page.metatitle}} &middot; neocotic</title>
+      <title>{{pagination_title}}{{page.metatitle}} &middot; neocotic</title>
     {% elsif page.title %}
-      <title>{{page.title}} &middot; neocotic</title>
+      <title>{{pagination_title}}{{page.title}} &middot; neocotic</title>
     {% else %}
-      <title>neocotic</title>
+      <title>{{pagination_title}}neocotic</title>
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
