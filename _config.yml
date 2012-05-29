@@ -50,6 +50,8 @@ project:
   morjs: &morjs
     name: mor.js
     version: "1.0.2"
+  pathlength: &pathlength
+    name: pathlength
   phonyjs: &phonyjs
     name: phony.js
     title: Phony
@@ -83,6 +85,7 @@ projects:
   - *jsonx
   - *mediad
   - *morjs
+  - *pathlength
   - *phonyjs
   - *qrjs
   - *template

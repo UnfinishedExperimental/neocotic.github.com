@@ -1,0 +1,357 @@
+---
+subtitle: JavaScript library for querying file path lengths
+layout: pathlength
+navbar_top_url: ""
+description: pathlength is a simple file path length checker for Node.js
+keywords: file, path, length, javascript, library, download, open, source, neocotic, github
+share: true
+---
+<p>
+  <a href="/pathlength">pathlength</a> is a simple file path length checker for
+  <a href="http://nodejs.org">Node.js</a>.
+</p>
+<h2><a name="installation"></a>Installation</h2>
+<p>Install from <a href="http://npmjs.org">npm</a>:</p>
+{% highlight bash %}
+$ npm install pathlength
+{% endhighlight %}
+<h2><a name="usage"></a>Usage</h2>
+<pre>Usage: pathlength [options] [target]
+
+Options:
+
+  -h, --help                 output usage information
+  -V, --version              output the version number
+  -d, --debug                output debug messages
+  -f, --filter [expression]  filter expression to use
+  -n, --no-headers           don't output headers for certain formats
+  -o, --output [format]      format for output
+  -p, --progressive          output matches as they are found
+  -r, --recursive            check directories recursively
+  -s, --stop                 don't search unfiltered directories</pre>
+<h3><a name="examples"></a>Examples</h3>
+<p>
+  Recursively check for all files within a <code>Temp</code> directory with a path
+  longer than 255 characters:
+</p>
+{% highlight bash %}
+$ pathlength -rf ">255" ~/Temp
+{% endhighlight %}
+<p>Check for paths length longer than that of the target file/directory:</p>
+{% highlight bash %}
+$ pathlength -rf ">@" ~/Temp
+{% endhighlight %}
+<p>Format the result output as a padded table with headers:</p>
+{% highlight bash %}
+$ pathlength -ro table -f ">@" ~/Temp
+{% endhighlight %}
+<p>Output:</p>
+<pre>Path                             Length Type
+/Users/neocotic/Temp/bar.txt     28     File
+/Users/neocotic/Temp/foo.txt     28     File
+/Users/neocotic/Temp/sub         24     Directory
+/Users/neocotic/Temp/sub/baz.txt 32     File
+/Users/neocotic/Temp/sub/fu.txt  31     File</pre>
+<p>Output the results of the search as they are found:</p>
+{% highlight bash %}
+$ pathlength -rpf ">@" ~/Temp
+{% endhighlight %}
+<h2><a name="formats"></a>Formats</h2>
+{% highlight bash %}
+$ pathlength -o $FORMAT ~/Temp
+{% endhighlight %}
+<div class="accordion" id="format">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#format" href="#simple">Simple (default)</a>
+    </div>
+    <div id="simple" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <p class="bold">Names:</p>
+        <p><code>simple</code> <code>s</code></p>
+        <p class="bold">Example:</p>
+        <pre>/Users/neocotic/Temp:20</pre>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#format" href="#csv">Comma-separated values</a>
+    </div>
+    <div id="csv" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p class="bold">Names:</p>
+        <p><code>csv</code> <code>c</code></p>
+        <p class="bold">Example:</p>
+        <pre>"/Users/neocotic/Temp","20","Directory"</pre>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#format" href="#json">JSON</a>
+    </div>
+    <div id="json" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p class="bold">Names:</p>
+        <p><code>json</code> <code>j</code></p>
+        <p class="bold">Example:</p>
+{% highlight javascript %}
+[
+  {
+    "path": "/Users/neocotic/Temp",
+    "length": 20,
+    "type": "Directory"
+  }
+]
+{% endhighlight %}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#format" href="#table">Table</a>
+    </div>
+    <div id="table" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p class="bold">Names:</p>
+        <p><code>table</code> <code>t</code></p>
+        <p class="bold">Example:</p>
+<pre>Path                 Length Type
+/Users/neocotic/Temp 20     Directory</pre>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#format" href="#xml">XML</a>
+    </div>
+    <div id="xml" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p class="bold">Names:</p>
+        <p><code>xml</code> <code>x</code></p>
+        <p class="bold">Example:</p>
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<results>
+  <result path="/Users/neocotic/Temp" length="20" type="Directory" />
+</results>
+{% endhighlight %}
+      </div>
+    </div>
+  </div>
+</div>
+<h2><a name="programmatically"></a>Programmatically</h2>
+<p><code>find([options][, callback])</code> is used primarily:</p>
+{% highlight javascript %}
+var pathlength = require('pathlength')
+
+pathlength.find({
+        filter: ['lte', '255']
+      , recursive: true
+      , target: '~/Temp'
+    }
+  , function(err, dataSet) {
+      if (err) throw err
+      // Process data set...
+    })
+{% endhighlight %}
+<h3><a name="options"></a>Options</h3>
+<p>
+  The following options are recognised by this method (all of which are optional);
+</p>
+<table class="table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 25%">Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>context</td>
+      <td>Context in which to call the callback function</td>
+    </tr>
+    <tr>
+      <td>filter</td>
+      <td>Filter expression used to check files/directories</td>
+    </tr>
+    <tr>
+      <td>recursive</td>
+      <td>Check directories recursively</td>
+    </tr>
+    <tr>
+      <td>stop</td>
+      <td>Don't check children of unfiltered directories</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>Target file/directory to check</td>
+    </tr>
+  </tbody>
+</table>
+<h3><a name="events"></a>Events</h3>
+<p>Get notified whenever a matching file/directory has been found:</p>
+{% highlight javascript %}
+var pathlength = require('pathlength')
+
+pathlength.on('data', function(e, data) {
+  console.log('Event: %j', e.type) // Event: "data"
+  // Process data...
+});
+pathlength.find({
+    filter: 'gt @'
+  , recursive: true
+  , target: '~/Temp'
+})
+{% endhighlight %}
+<p>The following events can be triggered by this method;</p>
+<table class="table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 25%">Name</th>
+      <th>Called...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>start</td>
+      <td>...after handling all arguments</td>
+    </tr>
+    <tr>
+      <td>afterStart</td>
+      <td>...before the first <em>beforeData</em> event</td>
+    </tr>
+    <tr>
+      <td>betweenData</td>
+      <td>...before all other <em>beforeData</em> events</td>
+    </tr>
+    <tr>
+      <td>beforeData</td>
+      <td>...before all <em>data</em> events (<code>data</code> argument passed to handlers)</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>...when the result has been stored in the data set (<code>data</code> argument passed to handlers)</td>
+    </tr>
+    <tr>
+      <td>afterData</td>
+      <td>...after all <em>data</em> events (<code>data</code> argument passed to handlers)</td>
+    </tr>
+    <tr>
+      <td>beforeEnd</td>
+      <td>...after the last <em>afterData</em> event (<code>dataSet</code> argument passed to handlers)</td>
+    </tr>
+    <tr>
+      <td>end</td>
+      <td>...in parallel with the callback function (<code>dataSet</code> argument passed to handlers)</td>
+    </tr>
+  </tbody>
+</table>
+<h3><a name="properties"></a>Properties</h3>
+{% highlight javascript %}
+pathlength.on('end', function(e, dataSet) {
+  dataSet.forEach(function(data) {
+    console.log(data.path)      // e.g. /Users/neocotic/Temp
+    console.log(data.length)    // e.g. 20
+    console.log(data.directory) // e.g. true
+    console.log('')
+  })
+})
+{% endhighlight %}
+<h2><a name="filters"></a>Filters</h2>
+<p>Filters simply consist of a comparison operator followed by an operand.</p>
+<p>
+  A wildcard (<code>*</code>) character replaces any invalid filter component(s),
+  which will result in all files and directories being included in the results.
+</p>
+<table class="table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 25%">Operators</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>!</code>
+        <code>!=</code>
+        <code>ne</code>
+      </td>
+      <td>Not equal to</td>
+    </tr>
+    <tr>
+      <td>
+        <code>=</code>
+        <code>==</code>
+        <code>eq</code>
+      </td>
+      <td>Equal to</td>
+    </tr>
+    <tr>
+      <td>
+        <code>&gt;</code>
+        <code>gt</code>
+      </td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td>
+        <code>&gt;=</code>
+        <code>gte</code>
+      </td>
+      <td>Greater than or equal to</td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;</code>
+        <code>lt</code>
+      </td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;=</code>
+        <code>lte</code>
+      </td>
+      <td>Less than or equal to</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Operands can consist of numeric characters or one of the following special characters,
+  which are replaced with their corresponding value:
+</p>
+<table class="table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 25%">Character</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>@</code></td>
+      <td>Length of the target file/directory</td>
+    </tr>
+  </tbody>
+</table>
+<h2><a name="bugs"></a>Bugs</h2>
+<p>
+  If you have any problems with this library or would like to see the changes currently
+  in development <a href="https://github.com/neocotic/pathlength/issues">browse our issues</a>.
+</p>
+<h2><a name="questions"></a>Questions?</h2>
+<p>
+  Take a look at the <a href="/pathlength/docs">documentation</a> to get a better
+  understanding of what the code is doing.
+</p>
+<p>
+  If that doesn't help, feel free to follow me on <a href="https://twitter.com">Twitter</a>,
+  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+</p>
+<div class="well">
+  <a href="https://github.com/neocotic/pathlength/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success">Download</a>
+  <a href="https://github.com/neocotic/pathlength" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info">View Source</a>
+</div>
