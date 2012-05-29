@@ -1,7 +1,11 @@
 // jQuery is ready.
 $(function() {
 
-  var $window = $(window);
+  var $window = $(window)
+    , neocotic = $.extend(true, {}, {
+          comments: {count: false, list: null}
+        , sharing: false
+      }, window.neocotic);
 
   // Activate styled tooltips.
   $('[rel=tooltip]').tooltip();
@@ -33,5 +37,48 @@ $(function() {
 
   $window.on('hashchange', hashPrecision);
   hashPrecision();
+
+  // Load Google Analytics script.
+  var _gaq = window._gaq = window._gaq || [];
+  _gaq.push(['_setAccount', 'UA-27505414-1']);
+  _gaq.push(['_trackPageview']);
+  $.getScript('http://www.google-analytics.com/ga.js');
+
+  // Specify common name required by Disqus.
+  if (neocotic.comments.count || neocotic.comments.list) {
+    window.disqus_shortname = 'neocotic';
+  }
+
+  // Load Disqus comment count script if enabled.
+  if (neocotic.comments.count) {
+    $.getScript('http://' + window.disqus_shortname + '.disqus.com/count.js');
+  }
+
+  // Load Disqus comment listing script if required.
+  if (neocotic.comments.list) {
+    window.disqus_identifier = neocotic.comments.list.id;
+    window.disqus_title = neocotic.comments.list.title;
+    window.disqus_url = 'http://neocotic.com' + neocotic.comments.list.id;
+    $.getScript('http://' + window.disqus_shortname + '.disqus.com/embed.js');
+  }
+
+  // Add ShareThis buttons and then load script if sharing is enabled.
+  if (neocotic.sharing) {
+    $('.st_container').append(
+        '<span class="st_twitter_hcount" displayText="Tweet"></span>'
+      , '<span class="st_plusone_hcount" displayText="Google +1"></span>'
+      , '<span class="st_facebook_hcount" displayText="Facebook"></span>'
+      , '<span class="st_linkedin_hcount" displayText="LinkedIn"></span>'
+      , '<span class="st_email_hcount" displayText="Email"></span>'
+      , '<span class="st_sharethis_hcount" displayText="Share"></span>'
+    );
+    window.switchTo5x = true;
+    $.getScript('http://w.sharethis.com/button/buttons.js', function() {
+      window.stLight.options({
+          onhover: false
+        , publisher: '22a034ba-ce1f-48fa-b612-d6ca2289060a'
+      });
+    });
+  }
 
 });

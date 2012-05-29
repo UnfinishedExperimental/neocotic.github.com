@@ -1,6 +1,7 @@
 ---
 layout: default
 share: true
+comments: true
 ---
 <article class="post">
   <header class="page-header">
@@ -15,27 +16,7 @@ share: true
   <div class="row-fluid">
     {{content}}
   </div>
-  {% if page.share %}
-    <div class="stContainer">
-      <span class="st_twitter_hcount" displayText="Tweet"></span>
-      <span class="st_plusone_hcount" displayText="Google +1"></span>
-      <span class="st_facebook_hcount" displayText="Facebook"></span>
-      <span class="st_linkedin_hcount" displayText="LinkedIn"></span>
-      <span class="st_email_hcount" displayText="Email"></span>
-      <span class="st_sharethis_hcount" displayText="Share"></span>
-    </div>
-  {% endif %}
+  <div class="st_container"></div>
 </article>
 <div id="disqus_thread"></div>
-<script>
-  var disqus_identifier = '{{page.id}}'
-    , disqus_shortname = 'neocotic'
-    , disqus_title = '{{page.title}}'
-    , disqus_url = 'http://neocotic.com{{page.id}}';
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  }());
-</script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>

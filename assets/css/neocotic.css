@@ -109,8 +109,11 @@ th > .label {
 #disqus_thread .dsq-trackback-url input {
   cursor: inherit;
 }
-.stContainer {
+.st_container {
   margin-top: 50px;
+}
+.st_container:empty {
+  display: none;
 }
 .jumbotron {
   position: relative;

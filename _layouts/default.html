@@ -23,27 +23,24 @@
         <link rel="stylesheet" href="{{stylesheet}}?{{ts_param}}">
       {% endfor %}
     {% endif %}
+    <script>
+      window.neocotic = {
+          comments: {
+              count: {% if page.comment_count %}true{% else %}false{% endif %}
+            , list: {% unless page.comments %}null{% else %}{
+                  id: '{{page.id}}'
+                , title: '{{page.title}}'
+              }{% endunless %}
+          }
+        , sharing: {% if page.share %}true{% else %}false{% endif %}
+      };
+    </script>
     <!--[if lt IE 9]>
       <script src="/assets/js/html5shiv.js?{{ts_param}}"></script>
     <![endif]-->
     <script src="/assets/js/jquery.min.js?{{ts_param}}"></script>
     <script src="/assets/js/bootstrap.min.js?{{ts_param}}"></script>
     <script src="/assets/js/neocotic.js?{{ts_param}}"></script>
-    {% if page.share %}
-      <script>
-        $(function() {
-
-          window.switchTo5x = true;
-          $.getScript('http://w.sharethis.com/button/buttons.js', function() {
-            stLight.options({
-                onhover: false
-              , publisher: '22a034ba-ce1f-48fa-b612-d6ca2289060a'
-            });
-          });
-
-        });
-      </script>
-    {% endif %}
     {% if page.scripts %}
       {% for script in page.scripts %}
         <script src="{{script}}?{{ts_param}}"></script>
@@ -105,6 +102,5 @@
         </div><!--/.container -->
       </footer>
     </div><!--/.container-fluid -->
-    {% include analytics.html %}
   </body>
 </html>
