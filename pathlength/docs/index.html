@@ -1,8 +1,13 @@
+---
+layout: nil
+---
+{% capture title %}{% if site.project.pathlength.title %}{{site.project.pathlength.title}}{% else %}{{site.project.pathlength.name}}{% endif %}{% endcapture %}
+{% capture ts_param %}_={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
 <!DOCTYPE html>
 <html>
     <head>
-    <title>pathlength</title>
-    <script src="/assets/js/jquery.min.js"></script>
+    <title>Documentation &middot; {{title}} &middot; neocotic</title>
+    <script src="/assets/js/jquery.min.js?{{ts_param}}"></script>
     <style>body {
     margin: 0;
     padding: 0;

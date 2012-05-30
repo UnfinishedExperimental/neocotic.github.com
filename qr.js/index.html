@@ -5,6 +5,8 @@ navbar_top_url: ""
 description: qr.js is a pure JavaScript library for generating QR codes using HTML5 technology
 keywords: qr, code, qrcode, generator, javascript, library, html5, canvas, image, url, ecc, api, encode, download, open, source, neocotic, github
 share: true
+resources:
+  - script: /qr.js/lib/qr.min.js
 ---
 <p>
   <a href="/qr.js">qr.js</a> is a pure JavaScript library for generating <a href="http://en.wikipedia.org/wiki/QR_code"><abbr rel="tooltip" title="Quick Response">QR</abbr> codes</a>
@@ -350,11 +352,10 @@ qr.VERSION
   </div>
 </div>
 <div class="well">
-  <a href="https://github.com/neocotic/qr.js/zipball/{{site.project.qrjs.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success">Download</a>
-  <a href="https://github.com/neocotic/qr.js" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info">View Source</a>
-  <button id="launch-demo" class="btn btn-large btn-inverse">Launch Demo</button>
+  <a href="https://github.com/neocotic/qr.js/zipball/{{site.project.qrjs.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/qr.js" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
+  <button id="launch-demo" class="btn btn-large btn-inverse"><i class="icon-play icon-white"></i> Demo</button>
 </div>
-<script src="https://raw.github.com/neocotic/qr.js/{{site.project.qrjs.version}}/qr.min.js"></script>
 <script>
   $(function() {
 

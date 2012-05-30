@@ -4,14 +4,27 @@ header_jumbo: true
 title: iOrder
 navbar_base_url: /iOrder
 navbar_items:
-- href: ""
-  text: Details
-- href: changes
-  text: Change Log
-- href: faq
-  text: FAQ
-- href: docs/background.html
-  text: Documentation
+  - href: ""
+    text: Details
+  - href: changes
+    text: Change Log
+  - href: faq
+    text: FAQ
+  - href: docs
+    text: Documentation
+    items:
+      - href: docs/background.html
+        text: background.coffee
+      - href: docs/install.html
+        text: install.coffee
+      - href: docs/notification.html
+        text: notification.coffee
+      - href: docs/options.html
+        text: options.coffee
+      - href: docs/popup.html
+        text: popup.coffee
+      - href: docs/utils.html
+        text: utils.coffee
 topbar_top_url: projects
 topbar_sub_url: iOrder
 ---

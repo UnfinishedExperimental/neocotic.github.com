@@ -73,6 +73,10 @@ th > .label {
      -moz-border-radius: 5px;
           border-radius: 5px;
 }
+.post .well-post .btn-post [class^="icon-"],
+.post .well-post .btn-post [class*=" icon-"] {
+  margin-top: 1px;
+}
 .posts .post .well-post {
   display: inline-block;
   padding: 9px;
@@ -87,6 +91,10 @@ th > .label {
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+}
+.posts .post .well-post .btn-post [class^="icon-"],
+.posts .post .well-post .btn-post [class*=" icon-"] {
+  margin-top: 0;
 }
 .posts .post .page-header .lead {
   font-size: 14px;
