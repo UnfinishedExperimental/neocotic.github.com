@@ -17,11 +17,19 @@ layout: default
         <h1>{{page.hero.header}}</h1>
         <p>{{page.hero.content}}</p>
         {% if page.hero.buttons %}
-          <p>
+          <div>
             {% for button in page.hero.buttons %}
-              <a href="{{button.url}}" class="btn btn-large {{button.classes}}"{% if button.title %} rel="tooltip" title="{{button.title}}"{% endif %}>{{button.text}}</a>
+              {% if button.donation_id %}
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="donation">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="{{button.donation_id}}">
+                  <button type="submit" class="btn btn-large {{button.classes}}"{% if button.title %} rel="tooltip" title="{{button.title}}"{% endif %}>{% if button.icon %}<i class="icon-{{button.icon.name}}{% if button.icon.invert %} icon-white{% endif %}"></i> {% endif %}{{button.text}}</button>
+                </form>
+              {% else %}
+                <a href="{{button.url}}" class="btn btn-large {{button.classes}}"{% if button.title %} rel="tooltip" title="{{button.title}}"{% endif %}>{% if button.icon %}<i class="icon-{{button.icon.name}}{% if button.icon.invert %} icon-white{% endif %}"></i> {% endif %}{{button.text}}</a>
+              {% endif %}
             {% endfor %}
-          </p>
+          </div>
         {% endif %}
       </div>
     </div>

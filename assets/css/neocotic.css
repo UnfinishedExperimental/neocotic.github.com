@@ -65,6 +65,29 @@ th > .label {
 .post .page-header .lead {
   font-size: 18px;
 }
+.post .well-post .btn-post {
+  padding: 9px 14px;
+  font-size: 15px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.posts .post .well-post {
+  display: inline-block;
+  padding: 9px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.posts .post .well-post .btn-post {
+  padding: 4px 10px 4px;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
 .posts .post .page-header .lead {
   font-size: 14px;
   margin-bottom: 6px;
@@ -93,6 +116,10 @@ th > .label {
 }
 .inline {
   display: inline-block !important;
+}
+form.donation {
+  display: inline;
+  margin: 0;
 }
 #disqus_thread {
   border-top: 1px solid #ddd;
