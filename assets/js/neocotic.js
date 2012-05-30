@@ -20,8 +20,8 @@ $(function() {
         return;
       }
       chrome.webstore.install($this.attr('href'), function() {
-        $this.toggleClass('chrome_install_button disabled').off('.chrome')
-            .html('Installed');
+        $this.toggleClass('chrome_install_button disabled').off('.chrome');
+        $this.html($this.html().replace('Install', 'Installed'));
       });
       e.preventDefault();
     });
