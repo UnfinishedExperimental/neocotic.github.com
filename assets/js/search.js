@@ -3,27 +3,33 @@
   var QUERY_PARAM = 'q';
 
   function parseParamsFromUrl() {
-    var search = window.location.search.substr(1)
-      , parts = search.split('&');
+    var params = {}
+      , parts = window.location.search.substr(1).split('\x26');
     for (var i = 0; i < parts.length; i++) {
-      var keyvaluepair = parts[i].split('=');
-      if (decodeURIComponent(keyvaluepair[0]) === QUERY_PARAM) {
-        return decodeURIComponent(keyvaluepair[1].replace(/\+/g, ' '));
-      }
+      var keyValuePair = parts[i].split('=')
+        , key = decodeURIComponent(keyValuePair[0]);
+      params[key] = keyValuePair[1]
+        ? decodeURIComponent(keyValuePair[1].replace(/\+/g, ' '))
+        : keyValuePair[1];
     }
-    return '';
+    return params;
   }
 
   var customSearchControl
-    , queryFromUrl = parseParamsFromUrl();
+    , queryFromUrl = parseParamsFromUrl()[QUERY_PARAM];
 
   google.load('search', '1', {language : 'en'});
 
   google.setOnLoadCallback(function() {
     customSearchControl = new google.search.CustomSearchControl(
-      '010241032241406631661:WMX2654048');
+      '010241032241406631661:WMX2654048', {
+        googleAnalyticsOptions: {
+            categoryParameter: ''
+          , queryParameter: QUERY_PARAM
+        }
+      });
     customSearchControl.setResultSetSize(
-      google.search.Search.LARGE_RESULTSET);
+      google.search.Search.FILTERED_CSE_RESULTSET);
     var options = new google.search.DrawOptions();
     options.setAutoComplete(true);
     options.enableSearchResultsOnly();
@@ -41,7 +47,7 @@
     if (queryFromUrl) $('#cse > .progress').show();
 
     $(window).on('popstate', function() {
-      queryFromUrl = parseParamsFromUrl();
+      queryFromUrl = parseParamsFromUrl()[QUERY_PARAM];
       input.val(queryFromUrl);
       if (!loaded) {
         loaded = true;
