@@ -15,8 +15,7 @@
     return params;
   }
 
-  var customSearchControl
-    , queryFromUrl = parseParamsFromUrl()[QUERY_PARAM];
+  var customSearchControl, queryFromUrl = parseParamsFromUrl()[QUERY_PARAM];
 
   google.load('search', '1', {language : 'en'});
 
