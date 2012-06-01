@@ -63,6 +63,7 @@ th > .label {
           transition: all .2s linear;
 }
 .navbar-fixed-top .brand:hover {
+  color: #111;
   text-decoration: none;
 }
 .ad-block {
