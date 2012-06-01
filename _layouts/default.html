@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    {% capture pagination_title %}{% if paginator and paginator.page > 1 %}Page {{paginator.page}} &middot; {% endif %}{% endcapture %}
+    {% capture pagination_title %}{% if paginator and paginator.page > 1 %}Page {{paginator.page}} of {{paginator.total_pages}} &middot; {% endif %}{% endcapture %}
     {% if page.metatitle %}
       <title>{{pagination_title}}{{page.metatitle}} &middot; neocotic</title>
     {% elsif page.title %}
@@ -11,8 +11,10 @@
       <title>{{pagination_title}}neocotic</title>
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
-    {% if page.keywords %}<meta name="keywords" content="{{page.keywords}}">{% endif %}
+    {% unless paginator and paginator.page > 1 %}
+      {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
+      {% if page.keywords %}<meta name="keywords" content="{{page.keywords}}">{% endif %}
+    {% endunless %}
     <meta name="author" content="Alasdair Mercer">
     {% capture ts_param %}_={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css?{{ts_param}}">
@@ -52,6 +54,9 @@
     {% endif %}
   </head>
   <body>
+    <script>
+      window.google_analytics_uacct = '{{site.analytics_account}}';
+    </script>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -80,22 +85,26 @@
               <input name="q" type="text" class="search-query span2" placeholder="Search">
             </form>
           </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+        </div><!--/.container -->
       </div><!--/.navbar-inner -->
     </div><!--/.navbar -->
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="container">
           {{content}}
+          <footer class="footer">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; Alasdair Mercer | <a href="/sitemap">Sitemap</a></p>
+            {% if page.glyphicons %}
+              <p>
+                Icons from <a href="http://glyphicons.com">Glyphicons Free</a>,
+                licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+              </p>
+            {% endif %}
+          </footer>
         </div><!--/.container -->
       </div><!--/.row-fluid -->
-      <hr>
-      <footer>
-        <div class="container">
-          <p class="pull-right"><a href="#">Back to top</a></p>
-          <p>&copy; Alasdair Mercer | <a href="/sitemap">Sitemap</a></p>
-        </div><!--/.container -->
-      </footer>
     </div><!--/.container-fluid -->
+    {% include analytics.html %}
   </body>
 </html>

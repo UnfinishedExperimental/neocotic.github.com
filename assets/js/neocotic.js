@@ -1,4 +1,3 @@
-// jQuery is ready.
 $(function() {
 
   var $window = $(window)
@@ -37,12 +36,6 @@ $(function() {
 
   $window.on('hashchange', hashPrecision);
   hashPrecision();
-
-  // Load Google Analytics script.
-  var _gaq = window._gaq = window._gaq || [];
-  _gaq.push(['_setAccount', 'UA-27505414-1']);
-  _gaq.push(['_trackPageview']);
-  $.getScript('http://www.google-analytics.com/ga.js');
 
   // Specify common name required by Disqus.
   if (neocotic.comments.count || neocotic.comments.list) {

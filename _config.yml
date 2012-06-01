@@ -1,11 +1,13 @@
 auto: true
 permalink: /:year/:month/:day/:title
 pygments: true
-paginate: 5
+paginate: 8
 exclude:
   - CNAME
   - Makefile
   - README.md
+adsense_publisher_id: pub-9368826237916342
+analytics_account: UA-27505414-1
 chrome_extensions:
   - dcjnfaoifoefmnbhhlbppaebgnccfddf
   - kflemogpkbophbipihnbcmlplbihbdhb

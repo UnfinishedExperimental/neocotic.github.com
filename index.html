@@ -52,8 +52,17 @@ comment_count: true
       </header>
       <div class="row-fluid">
         {{post.content}}
-      </div>
+      </div><!--/.row-fluid -->
     </article>
+    {% if forloop.index == 2 or forloop.index == 4 or forloop.index == 6 %}
+      {% unless forloop.last %}
+        <div class="ad-block">
+          <div class="well well-small">
+            {% include ad-728x90.html %}
+          </div><!--/.well -->
+        </div><!--/.ad-block -->
+      {% endunless %}
+    {% endif %}
   {% endfor %}
   {% include pagination.html %}
-</div>
+</div><!--/.posts -->

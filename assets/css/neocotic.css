@@ -43,11 +43,44 @@ th > .label {
   color: #08c;
   text-shadow: 0 -1px 0 rgba(0, 136, 204, 0.25);
 }
+.pagination {
+  margin: 0 0 18px;
+}
+.footer {
+  border-top: 1px solid #E5E5E5;
+  margin-top: 45px;
+  padding: 35px 0 36px;
+}
+.navbar-fixed-top .brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+.navbar-fixed-top .brand:hover {
+  text-decoration: none;
+}
+.ad-block {
+  text-align: center;
+}
+.ad-block-single {
+  margin-top: 20px;
+}
+.ad-block .well {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 4px 0;
+}
 .google-profile img {
   padding-bottom: 5px;
 }
 .posts {
-  margin-top: -60px;
+  margin-top: -15px;
 }
 .posts .page-header {
   padding-bottom: 3px;
@@ -104,7 +137,7 @@ th > .label {
   margin-bottom: 0px;
 }
 .posts .post {
-  padding-top: 60px;
+  padding: 15px 0 20px;
 }
 .gravatar {
   float: left;
@@ -330,6 +363,9 @@ form.donation {
   .footer p {
     margin-bottom: 9px;
   }
+  .ad-block {
+    display: none;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
@@ -339,6 +375,14 @@ form.donation {
   .jumbotron p {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .navbar-fixed-top .brand {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
