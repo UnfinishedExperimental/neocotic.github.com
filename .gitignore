@@ -5,6 +5,9 @@ _site
 node_modules
 npm-debug.log
 
+# Cloud9 generated folders #
+.c9revisions
+
 # OS generated files #
 .DS_Store
 ehthumbs.db
