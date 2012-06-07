@@ -34,6 +34,8 @@ layout: default
       </div>
     </div>
   {% endif %}
-  {{content}}
+  <div{% if page.microdata %} itemscope itemtype="{{page.microdata}}"{% endif %}>
+    {{content}}
+  </div>
   <div class="st_container"></div>
 </section>

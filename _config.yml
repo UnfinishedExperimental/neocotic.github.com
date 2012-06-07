@@ -15,23 +15,31 @@ chrome_extensions:
 project:
   blingaer: &blingaer
     name: blingaer
+    title: blingaer
   blingier: &blingier
     name: blingier
+    title: blingier
   cssutils: &cssutils
     name: css-utils
+    title: css-utils
     version: "1.0.0"
   dateext: &dateext
     name: date-ext
+    title: date-ext
     version: "1.0.2"
   gitant: &gitant
     name: git-ant
+    title: git-ant
   gitpress: &gitpress
     name: GitPress
+    title: GitPress
   htmlmd: &htmlmd
     name: html.md
+    title: html.md
     version: "1.0.0"
   iorder: &iorder
     name: iOrder
+    title: iOrder
     version: "1.1.2"
   jqueryconsole: &jqueryconsole
     name: jquery-console
@@ -42,6 +50,7 @@ project:
     version: "1.0.0"
   jsonpjs: &jsonpjs
     name: jsonp.js
+    title: jsonp.js
     version: "1.0.0"
   jsonx: &jsonx
     name: jsonx
@@ -49,21 +58,27 @@ project:
     version: "1.0.0"
   mediad: &mediad
     name: mediad
+    title: mediad
   morjs: &morjs
     name: mor.js
+    title: mor.js
     version: "1.0.2"
   pathlength: &pathlength
     name: pathlength
+    title: pathlength
   phonyjs: &phonyjs
     name: phony.js
     title: Phony
     version: "1.0.1"
   qrjs: &qrjs
     name: qr.js
+    title: qr.js
     version: "1.0.3"
   template: &template
+    created: 2011-03-29
     name: template
     title: Template
+    updated: 2012-05-31
     version: "1.1.4"
   undowikipediablackout: &undowikipediablackout
     name: UndoWikipediaBlackout
@@ -71,6 +86,7 @@ project:
     version: "1.2.1"
   yourlsapi: &yourlsapi
     name: yourls-api
+    title: yourls-api
     version: "1.0.0"
 projects:
   - *blingaer

@@ -4,6 +4,7 @@ layout: template
 navbar_top_url: ""
 description: Template is a Google Chrome extension that quickly and easily copies info on the current page using a simple and unique template system
 keywords: template, google, chrome, extension, addon, url, copy, clipboard, shortener, customize, clean, browser, markdown, bbcode, html, os, social, network, web, store, download, open, source, neocotic, github
+microdata: http://schema.org/WebApplication
 share: true
 carousel:
   images:
@@ -34,8 +35,43 @@ donation:
   id: BGWG9R5LBNECY
   size: large
 ---
+<div class="hide">
+  <!-- Thing -->
+  <meta itemprop="description" content="Quickly and easily copies info on the current page using a simple and unique template system.">
+  <meta itemprop="url" content="/template">
+  <meta itemprop="image" content="/template/images/logo_72.png">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="/about">
+  </div> 
+  <meta itemprop="dateCreated" content="{{site.project.template.created}}">
+  <meta itemprop="dateModified" content="{{site.project.template.updated}}">
+  <meta itemprop="datePublished" content="{{site.project.template.created}}">
+  <meta itemprop="copyrightYear" content="{{site.project.template.created | date:'%Y'}}">
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="£0">
+    <meta itemprop="priceCurrency" content="GBP">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <meta itemprop="version" content="{{site.project.template.version}}">
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="permissions" content="Data you copy and paste">
+  <meta itemprop="permissions" content="Your browsing history">
+  <meta itemprop="permissions" content="Your physical location">
+  <meta itemprop="permissions" content="Your data on all websites">
+  <meta itemprop="releaseNotes" content="/template/changes">
+  <meta itemprop="screenshot" content="/template/images/screenshot_01.png">
+  <link itemprop="SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="softwareVersion" content="{{site.project.template.version}}">
+  <!-- WebApplication -->
+  <meta itemprop="browsers" content="Google Chrome">
+</div>
 <p>
-  <a href="/template">Template</a> is an extension for <a href="http://google.com/chrome">Google Chrome</a>
+  <a href="/template" itemprop="name">Template</a> is an extension for <a href="http://google.com/chrome">Google Chrome</a>
   that provides quick and easy access to lots of information about the current
   page and environment;
 </p>
@@ -170,8 +206,8 @@ donation:
 <h2><a name="screenshots"></a>Screenshots</h2>
 {% include carousel.html %}
 <div class="well">
-  <a href="https://chrome.google.com/webstore/detail/dcjnfaoifoefmnbhhlbppaebgnccfddf" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button"><i class="icon-download-alt icon-white"></i> Install</a>
-  <a href="https://github.com/neocotic/template/zipball/v{{site.project.template.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://chrome.google.com/webstore/detail/dcjnfaoifoefmnbhhlbppaebgnccfddf" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button" itemprop="installUrl"><i class="icon-download-alt icon-white"></i> Install</a>
+  <a href="https://github.com/neocotic/template/zipball/v{{site.project.template.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadURL"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/template" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
   {% include donation.html %}
 </div>
