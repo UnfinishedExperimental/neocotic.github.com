@@ -38,12 +38,12 @@ donation:
 <div class="hide">
   <!-- Thing -->
   <meta itemprop="description" content="Quickly and easily copies info on the current page using a simple and unique template system.">
-  <meta itemprop="url" content="http://neocotic.com/template">
-  <meta itemprop="image" content="http://neocotic.com/template/images/logo_72.png">
+  <meta itemprop="url" content="{{site.origin}}/template">
+  <meta itemprop="image" content="{{site.origin}}/template/images/logo_72.png">
   <!-- CreativeWork -->
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alasdair Mercer">
-    <meta itemprop="url" content="http://neocotic.com/about">
+    <meta itemprop="url" content="{{site.me.google}}?rel=author">
   </div> 
   <meta itemprop="dateCreated" content="{{site.project.template.created}}">
   <meta itemprop="dateModified" content="{{site.project.template.updated}}">
@@ -52,7 +52,7 @@ donation:
   <meta itemprop="isFamilyFriendly" content="true">
   <meta itemprop="keywords" content="{{page.keywords}}">
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="£0">
+    <meta itemprop="price" content="0">
     <meta itemprop="priceCurrency" content="GBP">
     <link itemprop="availability" href="http://schema.org/InStock">
   </div>
@@ -63,8 +63,8 @@ donation:
   <meta itemprop="permissions" content="Your browsing history">
   <meta itemprop="permissions" content="Your physical location">
   <meta itemprop="permissions" content="Your data on all websites">
-  <meta itemprop="releaseNotes" content="http://neocotic.com/template/changes">
-  <meta itemprop="screenshot" content="http://neocotic.com/template/images/screenshot_01.png">
+  <meta itemprop="releaseNotes" content="{{site.origin}}/template/changes">
+  <meta itemprop="screenshot" content="{{site.origin}}/template/images/screenshot_01.png">
   <link itemprop="SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
   <meta itemprop="softwareVersion" content="{{site.project.template.version}}">
   <!-- WebApplication -->
@@ -199,9 +199,8 @@ donation:
   to get a better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>. However, I
-  highly recommend reading the <a href="/template/faq">frequently asked questions</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}" rel="me">@neocotic</a>.
+  However, I highly recommend reading the <a href="/template/faq">frequently asked questions</a>.
 </p>
 <h2><a name="screenshots"></a>Screenshots</h2>
 {% include carousel.html %}

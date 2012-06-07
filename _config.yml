@@ -12,6 +12,21 @@ chrome_extensions:
   - dcjnfaoifoefmnbhhlbppaebgnccfddf
   - kflemogpkbophbipihnbcmlplbihbdhb
   - gbgogigdaibinioohdhejplmajgkkfdn
+me:
+  cloud9: http://c9.io/neocotic
+  email: mercer.alasdair@gmail.com
+  facebook: http://www.facebook.com/alasdair.mercer
+  github: https://github.com/neocotic
+  google: https://plus.google.com/114861910136746455630
+  gravatar: http://www.gravatar.com/avatar/2471461cd50e090859ce5291760f3594
+  home: http://neocotic.com
+  linkedin: http://www.linkedin.com/profile/view?id=71374926
+  psn: http://us.playstation.com/publictrophy/index.htm?onlinename=Apehawk
+  scrim: http://scr.im/neocotic
+  steam: http://steamcommunity.com/id/neocotic/
+  twitter: https://twitter.com/neocotic
+  xbox: http://live.xbox.com/en-US/Profile?gamertag=neocotic
+origin: http://neocotic.com
 project:
   blingaer: &blingaer
     name: blingaer

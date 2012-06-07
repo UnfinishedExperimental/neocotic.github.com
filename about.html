@@ -9,7 +9,7 @@ microdata: http://schema.org/Person
 ---
 <div class="row-fluid">
   <div class="span10">
-    <img src="http://www.gravatar.com/avatar/2471461cd50e090859ce5291760f3594?s=120" width="160" height="160" class="gravatar" alt="Photo" itemprop="photo">
+    <img src="{{site.me.gravatar}}?s=120" width="160" height="160" class="gravatar" alt="Photo" itemprop="photo">
     <p>
       Hi, I'm <span itemprop="name">Alasdair Mercer</span> from
       <a href="http://maps.google.com/?q=Dunfermline,+Fife,+United+Kingdom" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Dunfermline</span>, <span itemprop="country-name">Scotland</span></a>.
@@ -21,17 +21,16 @@ microdata: http://schema.org/Person
       for <a href="http://rbs.com" itemprop="affiliation">The Royal Bank of Scotland</a>
       and have been since 2008. Although it allows me to work on extremely large
       projects with some exceptional people I get much more excited working on
-      my <a href="https://github.com/neocotic">personal development projects</a>
+      my <a href="{{site.me.github}}" rel="me">personal development projects</a>
       when I get any spare time as I'm able to be much more creative and experimental.
-      The main purpose for <a href="http://neocotic.com" itemprop="url">this website</a>
+      The main purpose for <a href="{{site.me.home}}" itemprop="url">this website</a>
       is to post about my interests as well as what I've discovered during development.
     </p>
     <p>
-      I'm also a huge game enthusiast and can be found primarily on <a href="http://live.xbox.com/en-US/MyXbox/Profile?gamertag=neocotic">Xbox Live</a>,
-      <a href="http://us.playstation.com/playstation/psn/visit/profiles/Apehawk" rel="tooltip" title="PlayStation Network">PSN</a>
-      and <a href="http://steamcommunity.com/id/neocotic/">Steam</a> but I play
-      a lot of PC games as well. Although I tend to play all genres I am a total
-      sucker for a good <abbr rel="tooltip" title="Role Playing Game">RPG</abbr>
+      I'm also a huge game enthusiast and can be found primarily on <a href="{{site.me.xbox}}">Xbox Live</a>,
+      <a href="{{site.me.psn}}" rel="tooltip" title="PlayStation Network">PSN</a>
+      and <a href="{{site.me.steam}}">Steam</a> but I play a lot of PC games as
+      well. Although I tend to play all genres I am a total sucker for a good <abbr rel="tooltip" title="Role Playing Game">RPG</abbr>
       or <abbr rel="tooltip" title="First Person Shooter">FPS</abbr>.
     </p>
     <p>
@@ -54,11 +53,11 @@ microdata: http://schema.org/Person
   <div class="span2">
     <h3>Network</h3>
     <p>
-      <a href="http://scr.im/neocotic">Email</a>
-      <a href="http://twitter.com/#!/neocotic" rel="me" style="font-size: 15pt">Twitter</a>
-      <a href="https://plus.google.com/114861910136746455630" rel="me" style="font-size: 22pt">Google+</a>
-      <a href="http://www.facebook.com/alasdair.mercer" rel="me" style="font-size: 15pt">Facebook</a>
-      <a href="https://github.com/neocotic" rel="me">GitHub</a>
+      <a href="{{site.me.scrim}}">Email</a>
+      <a href="{{site.me.twitter}}" rel="me" style="font-size: 15pt">Twitter</a>
+      <a href="{{site.me.google}}" rel="me" style="font-size: 22pt">Google+</a>
+      <a href="{{site.me.facebook}}" rel="me" style="font-size: 15pt">Facebook</a>
+      <a href="{{site.me.github}}" rel="me">GitHub</a>
     </p>
   </div>
 </div>
