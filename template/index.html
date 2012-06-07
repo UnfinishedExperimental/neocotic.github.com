@@ -48,7 +48,7 @@ donation:
     <meta itemprop="url" content="{{site.origin}}">
   </div>
   <meta itemprop="dateCreated" content="{{site.project.template.created}}">
-  <meta itemprop="dateModified" content="{{site.project.template.updated}}">
+  {% if site.project.template.updated %}<meta itemprop="dateModified" content="{{site.project.template.updated}}">{% endif %}
   <meta itemprop="datePublished" content="{{site.project.template.created}}">
   <meta itemprop="copyrightYear" content="{{site.project.template.created | date:'%Y'}}">
   <meta itemprop="isFamilyFriendly" content="true">

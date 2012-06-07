@@ -29,65 +29,92 @@ me:
 origin: http://neocotic.com
 project:
   blingaer: &blingaer
+    created: 2011-09-21
     name: blingaer
     title: blingaer
   blingier: &blingier
+    created: 2011-10-05
     name: blingier
     title: blingier
   cssutils: &cssutils
+    created: 2011-04-13
     name: css-utils
     title: css-utils
+    updated: 2011-12-16
     version: "1.0.0"
   dateext: &dateext
+    created: 2011-12-05
     name: date-ext
     title: date-ext
+    updated: 2012-05-08
     version: "1.0.2"
   gitant: &gitant
+    created: 2011-08-09
     name: git-ant
     title: git-ant
   gitpress: &gitpress
+    created: 2011-06-28
     name: GitPress
     title: GitPress
   htmlmd: &htmlmd
+    created: 2012-03-09
     name: html.md
     title: html.md
+    updated: 2012-03-12
     version: "1.0.0"
   iorder: &iorder
+    created: 2011-10-15
     name: iOrder
     title: iOrder
+    updated: 2012-05-31
     version: "1.1.2"
   jqueryconsole: &jqueryconsole
+    created: 2011-05-18
     name: jquery-console
     title: jQuery Console
   jqueryjsonx: &jqueryjsonx
+    created: 2011-05-26
     name: jquery-jsonx
     title: jQuery JSONX
+    updated: 2011-12-17
     version: "1.0.0"
   jsonpjs: &jsonpjs
+    created: 2011-12-08
     name: jsonp.js
     title: jsonp.js
+    updated: 2012-02-24
     version: "1.0.0"
   jsonx: &jsonx
+    created: 2011-05-25
     name: jsonx
     title: JSONX
+    updated: 2011-12-17
     version: "1.0.0"
   mediad: &mediad
+    created: 2011-08-09
     name: mediad
     title: mediad
   morjs: &morjs
+    created: 2011-10-29
     name: mor.js
     title: mor.js
+    updated: 2011-12-17
     version: "1.0.2"
   pathlength: &pathlength
+    created: 2012-03-30
     name: pathlength
     title: pathlength
   phonyjs: &phonyjs
+    created: 2011-11-15
     name: phony.js
     title: Phony
+    updated: 2011-12-19
     version: "1.0.1"
   qrjs: &qrjs
+    created: 2011-08-10
     name: qr.js
     title: qr.js
+    updated: 2011-12-19
     version: "1.0.3"
   template: &template
     created: 2011-03-29
@@ -96,12 +123,16 @@ project:
     updated: 2012-05-31
     version: "1.1.4"
   undowikipediablackout: &undowikipediablackout
+    created: 2012-01-18
     name: UndoWikipediaBlackout
     title: Undo Wikipedia Blackout
+    updated: 2012-05-31
     version: "1.2.1"
   yourlsapi: &yourlsapi
+    created: 2011-06-21
     name: yourls-api
     title: yourls-api
+    updated: 2011-12-19
     version: "1.0.0"
 projects:
   - *blingaer
