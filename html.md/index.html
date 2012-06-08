@@ -3,11 +3,44 @@ subtitle: JavaScript library for converting HTML into Markdown
 layout: htmlmd
 navbar_top_url: ""
 description: html.md is a pure JavaScript library for converting HTML in to valid Markdown
-keywords: html, markdown, convert, javascript, library, download, open, source, neocotic, github
+keywords: html, markdown, convert, javascript, library
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.htmlmd.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.htmlmd.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.htmlmd.created}}">
+  {% endif %}
+  {% if site.project.htmlmd.published %}<meta itemprop="datePublished" content="{{site.project.htmlmd.published}}">{% endif %}
+  {% if site.project.htmlmd.updated %}<meta itemprop="dateModified" content="{{site.project.htmlmd.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.htmlmd.file %}
+    {% if site.project.htmlmd.file.format %}<meta itemprop="fileFormat" content="{{site.project.htmlmd.file.format}}">{% endif %}
+    {% if site.project.htmlmd.file.size %}<meta itemprop="fileSize" content="{{site.project.htmlmd.file.size}}">{% endif %}
+  {% endif %}
+  <meta itemprop="softwareVersion version" content="{{site.project.htmlmd.version}}">
+</div>
 <p>
-  <a href="/html.md">html.md</a> is a JavaScript library that converts <abbr rel="tooltip" title="HyperText Markup Language">HTML</abbr>
+  <a href="{{site.origin}}/html.md" itemprop="name url">html.md</a> is a JavaScript
+  library that converts <abbr rel="tooltip" title="HyperText Markup Language">HTML</abbr>
   into valid <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>.
 </p>
 <p>
@@ -61,10 +94,9 @@ md.VERSION
   better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/html.md/zipball/{{site.project.htmlmd.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/html.md/zipball/{{site.project.htmlmd.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/html.md" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

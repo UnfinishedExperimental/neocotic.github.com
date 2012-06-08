@@ -3,11 +3,44 @@ subtitle: Simple JavaScript library for JSONP
 layout: jsonpjs
 navbar_top_url: ""
 description: jsonp.js is a simple JSONP JavaScript library
-keywords: jsonp, javascript, library, download, open, source, neocotic, github
+keywords: jsonp, javascript, library
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.jsonpjs.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.jsonpjs.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.jsonpjs.created}}">
+  {% endif %}
+  {% if site.project.jsonpjs.published %}<meta itemprop="datePublished" content="{{site.project.jsonpjs.published}}">{% endif %}
+  {% if site.project.jsonpjs.updated %}<meta itemprop="dateModified" content="{{site.project.jsonpjs.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.jsonpjs.file %}
+    {% if site.project.jsonpjs.file.format %}<meta itemprop="fileFormat" content="{{site.project.jsonpjs.file.format}}">{% endif %}
+    {% if site.project.jsonpjs.file.size %}<meta itemprop="fileSize" content="{{site.project.jsonpjs.file.size}}">{% endif %}
+  {% endif %}
+  <meta itemprop="softwareVersion version" content="{{site.project.jsonpjs.version}}">
+</div>
 <p>
-  <a href="/jsonp.js">jsonp.js</a> is a library that provides simple <a href="http://en.wikipedia.org/wiki/JSONP" rel="tooltip" title="JavaScript Object Notation with Padding">JSONP</a>
+  <a href="{{site.origin}}/jsonp.js" itemprop="name url">jsonp.js</a> is a library
+  that provides simple <a href="http://en.wikipedia.org/wiki/JSONP" rel="tooltip" title="JavaScript Object Notation with Padding">JSONP</a>
   support for JavaScript.
 </p>
 <h2><a name="get"></a>Get</h2>
@@ -67,10 +100,9 @@ JSONP.VERSION
   a better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/jsonp.js/zipball/{{site.project.jsonpjs.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/jsonp.js/zipball/{{site.project.jsonpjs.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/jsonp.js" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

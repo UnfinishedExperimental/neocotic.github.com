@@ -3,15 +3,47 @@ subtitle: Engine for personal online media collections
 layout: mediad
 navbar_top_url: ""
 description: mediad is an online directory that allows users to list the media they own
-keywords: mediad, php, online, media, directory, list, public, private, share, collection, manage, download, open, source, neocotic, github
+keywords: mediad, php, online, media, directory, list, public, private, share, collection, manage
+microdata: http://schema.org/WebApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.mediad.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.mediad.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.mediad.created}}">
+  {% endif %}
+  {% if site.project.mediad.published %}<meta itemprop="datePublished" content="{{site.project.mediad.published}}">{% endif %}
+  {% if site.project.mediad.updated %}<meta itemprop="dateModified" content="{{site.project.mediad.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/EntertainmentApplication">
+  {% if site.project.mediad.file %}
+    {% if site.project.mediad.file.format %}<meta itemprop="fileFormat" content="{{site.project.mediad.file.format}}">{% endif %}
+    {% if site.project.mediad.file.size %}<meta itemprop="fileSize" content="{{site.project.mediad.file.size}}">{% endif %}
+  {% endif %}
+</div>
 <p>
-  <a href="/mediad">mediad</a> is an online directory which allows users to list
-  their media collection as well as the ability to share it with their friends.
+  <a href="{{site.origin}}/mediad" itemprop="name url">mediad</a> is an online
+  directory which allows users to list their media collection as well as the ability
+  to share it with their friends.
 </p>
 <p>
-  The project was originally developed in Java and targeted for the <a href="http://code.google.com/appengine/">Google App Engine</a>.
+  The project was originally developed in Java and targeted for the <a href="http://code.google.com/appengine">Google App Engine</a>.
   However, this plan was dropped as I wanted to increase the scope of this project
   by rewriting it in <abbr rel="tooltip" title="Hypertext Preprocessor">PHP</abbr>
   as well as changing the whole approach.
@@ -32,10 +64,9 @@ share: true
   is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/mediad/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/mediad/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/mediad" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

@@ -30,107 +30,173 @@ origin: http://neocotic.com
 project:
   blingaer: &blingaer
     created: 2011-09-21
+    file:
+      format: application/zip
     name: blingaer
     title: blingaer
   blingier: &blingier
     created: 2011-10-05
+    file:
+      format: application/zip
     name: blingier
     title: blingier
   cssutils: &cssutils
     created: 2011-04-13
+    file:
+      format: application/zip
+      size: 11.6KB
     name: css-utils
+    published: 2011-12-16
     title: css-utils
     updated: 2011-12-16
     version: "1.0.0"
   dateext: &dateext
     created: 2011-12-05
+    file:
+      format: application/zip
+      size: 38.7KB
     name: date-ext
+    published: 2011-12-19
     title: date-ext
     updated: 2012-05-08
     version: "1.0.2"
   gitant: &gitant
     created: 2011-08-09
+    file:
+      format: application/zip
     name: git-ant
     title: git-ant
   gitpress: &gitpress
     created: 2011-06-28
+    file:
+      format: application/zip
     name: GitPress
     title: GitPress
   htmlmd: &htmlmd
     created: 2012-03-09
+    file:
+      format: application/zip
+      size: 17.1KB
     name: html.md
+    published: 2012-03-12
     title: html.md
     updated: 2012-03-12
     version: "1.0.0"
   iorder: &iorder
     created: 2011-10-15
+    file:
+      format: application/zip
+      size: 1.06MB
     name: iOrder
+    published: 2011-10-19
     title: iOrder
     updated: 2012-05-31
     version: "1.1.2"
   jqueryconsole: &jqueryconsole
     created: 2011-05-18
+    file:
+      format: application/zip
     name: jquery-console
     title: jQuery Console
   jqueryjsonx: &jqueryjsonx
     created: 2011-05-26
+    file:
+      format: application/zip
+      size: 5.03KB
     name: jquery-jsonx
+    published: 2011-12-17
     title: jQuery JSONX
     updated: 2011-12-17
     version: "1.0.0"
   jsonpjs: &jsonpjs
     created: 2011-12-08
+    file:
+      format: application/zip
+      size: 10.3KB
     name: jsonp.js
+    published: 2012-02-24
     title: jsonp.js
     updated: 2012-02-24
     version: "1.0.0"
   jsonx: &jsonx
     created: 2011-05-25
+    file:
+      format: application/zip
+      size: 8.89KB
     name: jsonx
+    published: 2011-12-17
     title: JSONX
     updated: 2011-12-17
     version: "1.0.0"
   mediad: &mediad
     created: 2011-08-09
+    file:
+      format: application/zip
     name: mediad
     title: mediad
   morjs: &morjs
     created: 2011-10-29
+    file:
+      format: application/zip
+      size: 34.6KB
     name: mor.js
+    published: 2011-10-31
     title: mor.js
     updated: 2011-12-17
     version: "1.0.2"
   pathlength: &pathlength
     created: 2012-03-30
+    file:
+      format: application/zip
     name: pathlength
     title: pathlength
   phonyjs: &phonyjs
     created: 2011-11-15
+    file:
+      format: application/zip
+      size: 36.8KB
     name: phony.js
+    published: 2011-11-16
     title: Phony
     updated: 2011-12-19
     version: "1.0.1"
   qrjs: &qrjs
     created: 2011-08-10
+    file:
+      format: application/zip
+      size: 35.6KB
     name: qr.js
+    published: 2011-08-12
     title: qr.js
     updated: 2011-12-19
     version: "1.0.3"
   template: &template
     created: 2011-03-29
+    file:
+      format: application/zip
+      size: 1.53MB
     name: template
+    published: 2011-04-11
     title: Template
     updated: 2012-05-31
     version: "1.1.4"
   undowikipediablackout: &undowikipediablackout
     created: 2012-01-18
+    file:
+      format: application/zip
+      size: 508KB
     name: UndoWikipediaBlackout
+    published: 2012-01-18
     title: Undo Wikipedia Blackout
     updated: 2012-05-31
     version: "1.2.1"
   yourlsapi: &yourlsapi
     created: 2011-06-21
+    file:
+      format: application/zip
+      size: 10.8KB
     name: yourls-api
+    published: 2011-12-19
     title: yourls-api
     updated: 2011-12-19
     version: "1.0.0"

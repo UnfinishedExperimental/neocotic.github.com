@@ -3,12 +3,43 @@ subtitle: JavaScript library for querying file path lengths
 layout: pathlength
 navbar_top_url: ""
 description: pathlength is a simple file path length checker for Node.js
-keywords: file, path, length, javascript, library, download, open, source, neocotic, github
+keywords: file, path, length, javascript, library
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.pathlength.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.pathlength.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.pathlength.created}}">
+  {% endif %}
+  {% if site.project.pathlength.published %}<meta itemprop="datePublished" content="{{site.project.pathlength.published}}">{% endif %}
+  {% if site.project.pathlength.updated %}<meta itemprop="dateModified" content="{{site.project.pathlength.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.pathlength.file %}
+    {% if site.project.pathlength.file.format %}<meta itemprop="fileFormat" content="{{site.project.pathlength.file.format}}">{% endif %}
+    {% if site.project.pathlength.file.size %}<meta itemprop="fileSize" content="{{site.project.pathlength.file.size}}">{% endif %}
+  {% endif %}
+</div>
 <p>
-  <a href="/pathlength">pathlength</a> is a simple file path length checker for
-  <a href="http://nodejs.org">Node.js</a>.
+  <a href="{{site.origin}}/pathlength" itemprop="name url">pathlength</a> is a
+  simple file path length checker for <a href="http://nodejs.org">Node.js</a>.
 </p>
 <h2><a name="installation"></a>Installation</h2>
 <p>Install from <a href="http://npmjs.org">npm</a>:</p>
@@ -132,9 +163,9 @@ $ pathlength -o $FORMAT ~/Temp
         <p><code>xml</code> <code>x</code></p>
         <p class="bold">Example:</p>
 {% highlight xml %}
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <results>
-  <result path="/Users/neocotic/Temp" length="20" type="Directory" />
+  <result path="/Users/neocotic/Temp" length="20" type="Directory"/>
 </results>
 {% endhighlight %}
       </div>
@@ -348,10 +379,9 @@ pathlength.on('end', function(e, dataSet) {
   understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/pathlength/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/pathlength/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/pathlength" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

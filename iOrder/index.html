@@ -35,9 +35,12 @@ donation:
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
-  <meta itemprop="dateCreated datePublished" content="{{site.project.iorder.created}}">
+  {% if site.project.iorder.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.iorder.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.iorder.created}}">
+  {% endif %}
+  {% if site.project.iorder.published %}<meta itemprop="datePublished" content="{{site.project.iorder.published}}">{% endif %}
   {% if site.project.iorder.updated %}<meta itemprop="dateModified" content="{{site.project.iorder.updated}}">{% endif %}
-  <meta itemprop="copyrightYear" content="{{site.project.iorder.created | date:'%Y'}}">
   <meta itemprop="isFamilyFriendly" content="true">
   <meta itemprop="keywords" content="{{page.keywords}}">
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -47,6 +50,10 @@ donation:
   </div>
   <!-- SoftwareApplication -->
   <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  {% if site.project.iorder.file %}
+    {% if site.project.iorder.file.format %}<meta itemprop="fileFormat" content="{{site.project.iorder.file.format}}">{% endif %}
+    {% if site.project.iorder.file.size %}<meta itemprop="fileSize" content="{{site.project.iorder.file.size}}">{% endif %}
+  {% endif %}
   <meta itemprop="permissions" content="Your data on neocotic.com">
   <meta itemprop="permissions" content="Your data on store.apple.com">
   <meta itemprop="permissions" content="Your tabs and browsing activity">

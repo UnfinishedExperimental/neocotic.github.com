@@ -32,9 +32,12 @@ donation:
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
-  <meta itemprop="dateCreated datePublished" content="{{site.project.undowikipediablackout.created}}">
+  {% if site.project.undowikipediablackout.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.undowikipediablackout.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.undowikipediablackout.created}}">
+  {% endif %}
+  {% if site.project.undowikipediablackout.published %}<meta itemprop="datePublished" content="{{site.project.undowikipediablackout.published}}">{% endif %}
   {% if site.project.undowikipediablackout.updated %}<meta itemprop="dateModified" content="{{site.project.undowikipediablackout.updated}}">{% endif %}
-  <meta itemprop="copyrightYear" content="{{site.project.undowikipediablackout.created | date:'%Y'}}">
   <meta itemprop="isFamilyFriendly" content="true">
   <meta itemprop="keywords" content="{{page.keywords}}">
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -44,6 +47,10 @@ donation:
   </div>
   <!-- SoftwareApplication -->
   <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  {% if site.project.undowikipediablackout.file %}
+    {% if site.project.undowikipediablackout.file.format %}<meta itemprop="fileFormat" content="{{site.project.undowikipediablackout.file.format}}">{% endif %}
+    {% if site.project.undowikipediablackout.file.size %}<meta itemprop="fileSize" content="{{site.project.undowikipediablackout.file.size}}">{% endif %}
+  {% endif %}
   <meta itemprop="permissions" content="Your data on neocotic.com">
   <meta itemprop="permissions" content="Your data on wikipedia.org">
   <meta itemprop="permissions" content="Your tabs and browsing activity">

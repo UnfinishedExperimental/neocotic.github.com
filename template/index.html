@@ -46,9 +46,12 @@ donation:
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
-  <meta itemprop="dateCreated datePublished" content="{{site.project.template.created}}">
+  {% if site.project.template.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.template.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.template.created}}">
+  {% endif %}
+  {% if site.project.template.published %}<meta itemprop="datePublished" content="{{site.project.template.published}}">{% endif %}
   {% if site.project.template.updated %}<meta itemprop="dateModified" content="{{site.project.template.updated}}">{% endif %}
-  <meta itemprop="copyrightYear" content="{{site.project.template.created | date:'%Y'}}">
   <meta itemprop="isFamilyFriendly" content="true">
   <meta itemprop="keywords" content="{{page.keywords}}">
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -58,6 +61,10 @@ donation:
   </div>
   <!-- SoftwareApplication -->
   <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  {% if site.project.template.file %}
+    {% if site.project.template.file.format %}<meta itemprop="fileFormat" content="{{site.project.template.file.format}}">{% endif %}
+    {% if site.project.template.file.size %}<meta itemprop="fileSize" content="{{site.project.template.file.size}}">{% endif %}
+  {% endif %}
   <meta itemprop="permissions" content="Data you copy and paste">
   <meta itemprop="permissions" content="Your browsing history">
   <meta itemprop="permissions" content="Your physical location">
@@ -151,7 +158,7 @@ donation:
 </ul>
 <h2><a name="supported-extensions"></a>Supported Extensions</h2>
 <p>
-  These extensions are supported by Template. <a href="/template/faq#supported-extensions">What does this mean?</a>
+  These extensions are supported by <a href="/template">Template</a>. <a href="/template/faq#supported-extensions">What does this mean?</a>
 </p>
 <ul>
   <li>

@@ -3,13 +3,45 @@ subtitle: JavaScript library providing XML to JSON two-way transformations
 layout: jsonx
 navbar_top_url: ""
 description: JSONX is a JavaScript library that provides support for XML to JSON transformations and vice versa
-keywords: jsonx, json, xml, javascript, library, transform, convert, download, open, source, neocotic, github
+keywords: jsonx, json, xml, javascript, library, transform, convert
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.jsonx.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.jsonx.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.jsonx.created}}">
+  {% endif %}
+  {% if site.project.jsonx.published %}<meta itemprop="datePublished" content="{{site.project.jsonx.published}}">{% endif %}
+  {% if site.project.jsonx.updated %}<meta itemprop="dateModified" content="{{site.project.jsonx.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.jsonx.file %}
+    {% if site.project.jsonx.file.format %}<meta itemprop="fileFormat" content="{{site.project.jsonx.file.format}}">{% endif %}
+    {% if site.project.jsonx.file.size %}<meta itemprop="fileSize" content="{{site.project.jsonx.file.size}}">{% endif %}
+  {% endif %}
+  <meta itemprop="softwareVersion version" content="{{site.project.jsonx.version}}">
+</div>
 <p>
-  <a href="/jsonx">JSONX</a> is a JavaScript library which allows simple transformation
-  between <abbr rel="tooltip" title="Extensible Markup Language">XML</abbr> and
-  <abbr rel="tooltip" title="JavaScript Object Notation">JSON</abbr>.
+  <a href="{{site.origin}}/jsonx" itemprop="name url">JSONX</a> is a JavaScript
+  library which allows simple transformation between <abbr rel="tooltip" title="Extensible Markup Language">XML</abbr>
+  and <abbr rel="tooltip" title="JavaScript Object Notation">JSON</abbr>.
 </p>
 <p>Please check back again soon to find more information and some examples.</p>
 <h2><a name="json-xml"></a>JSONX to XML</h2>
@@ -71,10 +103,9 @@ STRING : 'a'..'z'+ ;
   is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/jsonx/zipball/{{site.project.jsonx.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/jsonx/zipball/{{site.project.jsonx.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/jsonx" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

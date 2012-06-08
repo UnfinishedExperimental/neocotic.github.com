@@ -3,9 +3,41 @@ subtitle: JavaScript bindings for the YOURLS API
 layout: yourlsapi
 navbar_top_url: ""
 description: yourls-api is a pure JavaScript library for providing bindings for the YOURLS URL shortener service
-keywords: yourls, url, shortener, javascript, library, api, json, jsonp, download, open, source, neocotic, github
+keywords: yourls, url, shortener, javascript, library, api, json, jsonp
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.yourlsapi.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.yourlsapi.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.yourlsapi.created}}">
+  {% endif %}
+  {% if site.project.yourlsapi.published %}<meta itemprop="datePublished" content="{{site.project.yourlsapi.published}}">{% endif %}
+  {% if site.project.yourlsapi.updated %}<meta itemprop="dateModified" content="{{site.project.yourlsapi.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.yourlsapi.file %}
+    {% if site.project.yourlsapi.file.format %}<meta itemprop="fileFormat" content="{{site.project.yourlsapi.file.format}}">{% endif %}
+    {% if site.project.yourlsapi.file.size %}<meta itemprop="fileSize" content="{{site.project.yourlsapi.file.size}}">{% endif %}
+  {% endif %}
+  <meta itemprop="softwareVersion version" content="{{site.project.yourlsapi.version}}">
+</div>
 <div class="alert alert-block fade in">
   <button class="close" data-dismiss="alert">&times;</button>
   <h4 class="alert-heading">Warning!</h4>
@@ -25,9 +57,10 @@ share: true
   </p>
 </div>
 <p>
-  <a href="/yourls-api">yourls-api</a> is a JavaScript library that provides bindings
-  for the <a href="http://yourls.org">YOURLS</a> <abbr rel="tooltip" title="Application Programming Interface">API</abbr>
-  using <a href="http://en.wikipedia.org/wiki/JSONP" rel="tooltip" title="JavaScript Object Notation with Padding">JSONP</a>.
+  <a href="{{site.origin}}/yourls-api" itemprop="name url">yourls-api</a> is a
+  JavaScript library that provides bindings for the <a href="http://yourls.org">YOURLS</a>
+  <abbr rel="tooltip" title="Application Programming Interface">API</abbr> using
+  <a href="http://en.wikipedia.org/wiki/JSONP" rel="tooltip" title="JavaScript Object Notation with Padding">JSONP</a>.
 </p>
 <h2><a name="connect"></a>Connecting</h2>
 {% highlight javascript %}
@@ -163,10 +196,9 @@ yourls.VERSION
   get a better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/yourls-api/zipball/{{site.project.yourlsapi.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/yourls-api/zipball/{{site.project.yourlsapi.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/yourls-api" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

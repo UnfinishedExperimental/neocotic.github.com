@@ -3,22 +3,54 @@ subtitle: jQuery plugin to create a simulated console in the browser
 layout: jqueryconsole
 navbar_top_url: ""
 description: jQuery Console is a plugin for the library that creates a simulated console/terminal environment
-keywords: javascript, jquery, plugin, console, terminal, command, line, simulation, virtual, file, system, download, open, source, neocotic, github
+keywords: javascript, jquery, plugin, console, terminal, command, line, simulation, virtual, file, system
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.jqueryconsole.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.jqueryconsole.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.jqueryconsole.created}}">
+  {% endif %}
+  {% if site.project.jqueryconsole.published %}<meta itemprop="datePublished" content="{{site.project.jqueryconsole.published}}">{% endif %}
+  {% if site.project.jqueryconsole.updated %}<meta itemprop="dateModified" content="{{site.project.jqueryconsole.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  {% if site.project.jqueryconsole.file %}
+    {% if site.project.jqueryconsole.file.format %}<meta itemprop="fileFormat" content="{{site.project.jqueryconsole.file.format}}">{% endif %}
+    {% if site.project.jqueryconsole.file.size %}<meta itemprop="fileSize" content="{{site.project.jqueryconsole.file.size}}">{% endif %}
+  {% endif %}
+</div>
 <p>
-  <a href="/jquery-console">jQuery Console</a> is a plugin for <a href="http://jquery.com/">jQuery</a>
-  that simulates a console/terminal environment within the browser.
+  <a href="{{site.origin}}/jquery-console" itemprop="name url">jQuery Console</a>
+  is a plugin for <a href="http://jquery.com">jQuery</a> that simulates a console/terminal
+  environment within the browser.
 </p>
 <p>
   I originally created the plugin to be used as part of my old <a href="http://pages.github.com">GitHub page</a>
   but then realised it had more appeal and potential after working on it so long.
-  Eventually I decided to tidy it up and release individually as a <a href="http://jquery.com/">jQuery</a>
+  Eventually I decided to tidy it up and release individually as a <a href="http://jquery.com">jQuery</a>
   plugin.
 </p>
 <p>
   Once I have documented and tidied the code as well as finalising the <abbr rel="tooltip" title="Application Programming Interface">API</abbr>
-  I will make a full release of the plugin and publish it on the <a href="http://plugins.jquery.com/">jQuery plugins directory</a>.
+  I will make a full release of the plugin and publish it on the <a href="http://plugins.jquery.com">jQuery plugins directory</a>.
   I hope to get this done soon but in the meantime you can hopefully get a good
   understanding of how to use it by looking at the code.
 </p>
@@ -37,10 +69,9 @@ share: true
   is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/jquery-console/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/jquery-console/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/jquery-console" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

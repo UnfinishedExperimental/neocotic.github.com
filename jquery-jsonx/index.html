@@ -3,23 +3,56 @@ subtitle: jQuery plugin for JSONX
 layout: jqueryjsonx
 navbar_top_url: ""
 description: jQuery JSONX is a plugin for the library that provides support for XML to JSON transformations and vice versa
-keywords: jsonx, json, xml, javascript, jquery, plugin, transform, convert, download, open, source, neocotic, github
+keywords: jsonx, json, xml, javascript, jquery, plugin, transform, convert
+microdata: http://schema.org/SoftwareApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.jqueryjsonx.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.jqueryjsonx.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.jqueryjsonx.created}}">
+  {% endif %}
+  {% if site.project.jqueryjsonx.published %}<meta itemprop="datePublished" content="{{site.project.jqueryjsonx.published}}">{% endif %}
+  {% if site.project.jqueryjsonx.updated %}<meta itemprop="dateModified" content="{{site.project.jqueryjsonx.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  {% if site.project.jqueryjsonx.file %}
+    {% if site.project.jqueryjsonx.file.format %}<meta itemprop="fileFormat" content="{{site.project.jqueryjsonx.file.format}}">{% endif %}
+    {% if site.project.jqueryjsonx.file.size %}<meta itemprop="fileSize" content="{{site.project.jqueryjsonx.file.size}}">{% endif %}
+  {% endif %}
+  <meta itemprop="softwareVersion version" content="{{site.project.jqueryjsonx.version}}">
+</div>
 <p>
-  <a href="/jquery-jsonx">jQuery JSONX</a> is a <a href="http://jquery.com/">jQuery</a>
-  plugin which allows simple transformation between <abbr rel="tooltip" title="Extensible Markup Language">XML</abbr>
-  and <abbr rel="tooltip" title="JavaScript Object Notation">JSON</abbr>.
+  <a href="{{site.origin}}/jquery-jsonx" itemprop="name url">jQuery JSONX</a> is
+  a <a href="http://jquery.com">jQuery</a> plugin which allows simple transformation
+  between <abbr rel="tooltip" title="Extensible Markup Language">XML</abbr> and
+  <abbr rel="tooltip" title="JavaScript Object Notation">JSON</abbr>.
 </p>
 <p>
-  This is a <a href="http://jquery.com/">jQuery</a> implementation for the <a href="/jsonx">JSONX</a>
+  This is a <a href="http://jquery.com">jQuery</a> implementation for the <a href="/jsonx">JSONX</a>
   JavaScript library which provides the same transformation support as well as
-  additional manipulation and management using the powerful <a href="http://jquery.com/">jQuery</a>
+  additional manipulation and management using the powerful <a href="http://jquery.com">jQuery</a>
   framework.
 </p>
 <p>
   Once I have fully documented the code I will make another release of the plugin
-  and publish it on the <a href="http://plugins.jquery.com/">jQuery plugins directory</a>.
+  and publish it on the <a href="http://plugins.jquery.com">jQuery plugins directory</a>.
   I hope to get this done soon but in the meantime you can hopefully get a good
   understanding of how to use it by looking at the code.
 </p>
@@ -37,7 +70,7 @@ $(*).jsonx('parse'[, jQuery|String])
 $.jsonx('parse'[, jQuery|String])
 {% endhighlight %}
 <p>
-  The current <a href="http://jquery.com/">jQuery</a> context will be parsed if
+  The current <a href="http://jquery.com">jQuery</a> context will be parsed if
   the second argument is omitted for <code>parse</code>.
 </p>
 <h2><a name="stringify"></a>Stringify</h2>
@@ -46,7 +79,7 @@ $(*).jsonx('stringify'[, Array|jQuery])
 $.jsonx('stringify'[, Array|jQuery])
 {% endhighlight %}
 <p>
-  The current <a href="http://jquery.com/">jQuery</a> context will be transformed
+  The current <a href="http://jquery.com">jQuery</a> context will be transformed
   into a string if the second argument is omitted for <code>stringify</code>.
 </p>
 <h2><a name="grammar"></a>Grammar</h2>
@@ -96,10 +129,9 @@ STRING : 'a'..'z'+ ;
   is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/jquery-jsonx/zipball/{{site.project.jqueryjsonx.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/jquery-jsonx/zipball/{{site.project.jqueryjsonx.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/jquery-jsonx" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>

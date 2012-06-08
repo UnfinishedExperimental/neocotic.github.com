@@ -1,20 +1,19 @@
 ---
 layout: nil
 ---
-{% capture title %}{% if site.project.dateext.title %}{{site.project.dateext.title}}{% else %}{{site.project.dateext.name}}{% endif %}{% endcapture %}
 {% capture ts_param %}_={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Tests &middot; {{title}} &middot; neocotic</title>
+    <title>Tests &middot; {{site.project.dateext.title}} &middot; neocotic</title>
     <link rel="stylesheet" href="/assets/css/qunit.css?{{ts_param}}">
     <script src="/assets/js/qunit.js?{{ts_param}}"></script>
     <script src="/date-ext/lib/date-ext.min.js?{{ts_param}}"></script>
     <script src="suite/date-ext.js?{{ts_param}}"></script>
   </head>
   <body>
-    <h1 id="qunit-header">{{title}}</h1>
+    <h1 id="qunit-header">{{site.project.dateext.title}}</h1>
     <h2 id="qunit-banner"></h2>
     <div id="qunit-testrunner-toolbar"></div>
     <h2 id="qunit-userAgent"></h2>

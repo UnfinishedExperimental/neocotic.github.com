@@ -3,12 +3,43 @@ subtitle: URL shortener for Google App Engine
 layout: blingaer
 navbar_top_url: ""
 description: blingaer is a URL shortener engine powered entirely by Java and designed to run on Google App Engine
-keywords: java, url, shortener, api, google, app, engine, objectify, download, open, source, neocotic, github
+keywords: java, url, shortener, api, google, app, engine
+microdata: http://schema.org/WebApplication
 share: true
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="{{page.subtitle}}.">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  {% if site.project.blingaer.created %}
+    <meta itemprop="copyrightYear" content="{{site.project.blingaer.created | date:'%Y'}}">
+    <meta itemprop="dateCreated" content="{{site.project.blingaer.created}}">
+  {% endif %}
+  {% if site.project.blingaer.published %}<meta itemprop="datePublished" content="{{site.project.blingaer.published}}">{% endif %}
+  {% if site.project.blingaer.updated %}<meta itemprop="dateModified" content="{{site.project.blingaer.updated}}">{% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  {% if site.project.blingaer.file %}
+    {% if site.project.blingaer.file.format %}<meta itemprop="fileFormat" content="{{site.project.blingaer.file.format}}">{% endif %}
+    {% if site.project.blingaer.file.size %}<meta itemprop="fileSize" content="{{site.project.blingaer.file.size}}">{% endif %}
+  {% endif %}
+</div>
 <p>
-  <a href="/blingaer">blingaer</a> is a <abbr rel="tooltip" title="Uniform Resouce Locator">URL</abbr>
-  shortener engine powered entirely by Java and designed to run only on the <a href="http://code.google.com/appengine/">Google App Engine</a>
+  <a href="{{site.origin}}/blingaer" itemprop="name url">blingaer</a> is a <abbr rel="tooltip" title="Uniform Resouce Locator">URL</abbr>
+  shortener engine powered entirely by Java and designed to run only on the <a href="http://code.google.com/appengine">Google App Engine</a>
   that allows anyone to host their very own service.
 </p>
 <p>
@@ -42,10 +73,9 @@ share: true
   is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
 </p>
 <div class="well">
-  <a href="https://github.com/neocotic/blingaer/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/blingaer/zipball/master" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/blingaer" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
 </div>
