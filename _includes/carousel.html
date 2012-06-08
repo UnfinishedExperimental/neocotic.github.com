@@ -5,12 +5,21 @@
     <div id="carousel" class="carousel slide span8">
       <div class="carousel-inner">
         {% for image in page.carousel.images %}
-          <div class="item{% if forloop.first %} active{% endif %}">
-            <img src="{{image.url}}?{{ts_param}}"{% if image.title %} alt="{{image.title}}"{% endif %}>
+          <div class="item{% if forloop.first %} active{% endif %}"{% if image.property %} itemprop="{{image.property}}"{% endif %} itemscope itemtype="http://schema.org/ImageObject">
+            <div class="hide">
+              <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <meta itemprop="name" content="Alasdair Mercer">
+                <meta itemprop="url" content="{{site.origin}}">
+              </div>
+              {% if image.height %}<meta itemprop="height" content="{{image.height}}">{% endif %}
+              <meta itemprop="isFamilyFriendly" content="true">
+              {% if image.width %}<meta itemprop="width" content="{{image.width}}">{% endif %}
+            </div>
+            <img src="{{image.url}}?{{ts_param}}" alt="{% if image.title %}{{image.title}}{% else %}Image {{forloop.index}}{% endif %}" itemprop="contentUrl image url">
             {% if image.title or image.caption %}
               <div class="carousel-caption">
-                {% if image.title %}<h4>{{image.title}}</h4>{% endif %}
-                {% if image.caption %}<p>{{image.caption}}</p>{% endif %}
+                {% if image.title %}<h4 itemprop="name">{{image.title}}</h4>{% endif %}
+                {% if image.caption %}<p itemprop="caption description headline">{{image.caption}}</p>{% endif %}
               </div>
             {% endif %}
           </div>

@@ -8,12 +8,9 @@ microdata: http://schema.org/SoftwareApplication
 share: true
 ---
 <div class="hide">
-  <!-- Google -->
-  <a href="{{site.me.google}}?rel=author"></a>
-  <!-- Thing -->
-  <meta itemprop="description" content="{{page.subtitle}}.">
-  <!-- CreativeWork -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="{{site.me.google}}?rel=author"></a>
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
@@ -23,19 +20,18 @@ share: true
   {% endif %}
   {% if site.project.gitpress.published %}<meta itemprop="datePublished" content="{{site.project.gitpress.published}}">{% endif %}
   {% if site.project.gitpress.updated %}<meta itemprop="dateModified" content="{{site.project.gitpress.updated}}">{% endif %}
-  <meta itemprop="isFamilyFriendly" content="true">
-  <meta itemprop="keywords" content="{{page.keywords}}">
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="$0">
-    <meta itemprop="priceCurrency" content="USD">
-    <link itemprop="availability" href="http://schema.org/PreOrder">
-  </div>
-  <!-- SoftwareApplication -->
-  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="description headline" content="{{page.subtitle}}.">
   {% if site.project.gitpress.file %}
     {% if site.project.gitpress.file.format %}<meta itemprop="fileFormat" content="{{site.project.gitpress.file.format}}">{% endif %}
     {% if site.project.gitpress.file.size %}<meta itemprop="fileSize" content="{{site.project.gitpress.file.size}}">{% endif %}
   {% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+  </div>
 </div>
 <p>
   <a href="{{site.origin}}/GitPress" itemprop="name url">GitPress</a> is a <a href="http://wordpress.org">WordPress</a>

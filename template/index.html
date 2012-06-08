@@ -10,24 +10,29 @@ carousel:
   images:
     - url: /template/images/screenshot_01.png
       title: Simplicity
+      property: screenshot
       caption: >
         Plenty of ways to quickly access your favourite templates while browsing
     - url: /template/images/screenshot_02.png
       title: Make yourself at home
+      property: screenshot
       caption: >
         Have complete control of how Template works using its amazing options page
     - url: /template/images/screenshot_03.png
       title: Roll your own
+      property: screenshot
       caption: >
         Customizing existing templates or creating your very own couldn't be any
         easier
     - url: /template/images/screenshot_04.png
       title: Mini links
+      property: screenshot
       caption: >
         Choose from a list of available URL shorteners, all with their own configuration
         options
     - url: /template/images/screenshot_05.png
       title: Know-how
+      property: screenshot
       caption: >
         Template comes complete with its own fully documented built-in guide so
         writing your own is as easy as pie
@@ -36,13 +41,9 @@ donation:
   size: large
 ---
 <div class="hide">
-  <!-- Google -->
-  <a href="{{site.me.google}}?rel=author"></a>
-  <!-- Thing -->
-  <meta itemprop="description" content="Quickly and easily copies info on the current page using a simple and unique template system.">
-  <meta itemprop="image" content="{{site.origin}}/template/images/logo_72.png">
-  <!-- CreativeWork -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="{{site.me.google}}?rel=author"></a>
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
@@ -52,24 +53,23 @@ donation:
   {% endif %}
   {% if site.project.template.published %}<meta itemprop="datePublished" content="{{site.project.template.published}}">{% endif %}
   {% if site.project.template.updated %}<meta itemprop="dateModified" content="{{site.project.template.updated}}">{% endif %}
-  <meta itemprop="isFamilyFriendly" content="true">
-  <meta itemprop="keywords" content="{{page.keywords}}">
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="$0">
-    <meta itemprop="priceCurrency" content="USD">
-    <link itemprop="availability" href="http://schema.org/InStock">
-  </div>
-  <!-- SoftwareApplication -->
-  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="description headline" content="Quickly and easily copies info on the current page using a simple and unique template system.">
   {% if site.project.template.file %}
     {% if site.project.template.file.format %}<meta itemprop="fileFormat" content="{{site.project.template.file.format}}">{% endif %}
     {% if site.project.template.file.size %}<meta itemprop="fileSize" content="{{site.project.template.file.size}}">{% endif %}
   {% endif %}
+  <meta itemprop="image" content="{{site.origin}}/template/images/logo_72.png">
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="availability" href="http://schema.org/InStock">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+  </div>
   <meta itemprop="permissions" content="Data you copy and paste">
   <meta itemprop="permissions" content="Your browsing history">
   <meta itemprop="permissions" content="Your physical location">
   <meta itemprop="permissions" content="Your data on all websites">
-  <meta itemprop="screenshot" content="{{site.origin}}/template/images/screenshot_01.png">
 </div>
 <p>
   <a href="{{site.origin}}/template" itemprop="name url">Template</a> is an extension

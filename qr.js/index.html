@@ -10,12 +10,9 @@ resources:
   - script: /qr.js/lib/qr.min.js
 ---
 <div class="hide">
-  <!-- Google -->
-  <a href="{{site.me.google}}?rel=author"></a>
-  <!-- Thing -->
-  <meta itemprop="description" content="{{page.subtitle}}.">
-  <!-- CreativeWork -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="{{site.me.google}}?rel=author"></a>
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
@@ -25,19 +22,18 @@ resources:
   {% endif %}
   {% if site.project.qrjs.published %}<meta itemprop="datePublished" content="{{site.project.qrjs.published}}">{% endif %}
   {% if site.project.qrjs.updated %}<meta itemprop="dateModified" content="{{site.project.qrjs.updated}}">{% endif %}
-  <meta itemprop="isFamilyFriendly" content="true">
-  <meta itemprop="keywords" content="{{page.keywords}}">
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="$0">
-    <meta itemprop="priceCurrency" content="USD">
-    <link itemprop="availability" href="http://schema.org/InStock">
-  </div>
-  <!-- SoftwareApplication -->
-  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/UtilitiesApplication">
+  <meta itemprop="description headline" content="{{page.subtitle}}.">
   {% if site.project.qrjs.file %}
     {% if site.project.qrjs.file.format %}<meta itemprop="fileFormat" content="{{site.project.qrjs.file.format}}">{% endif %}
     {% if site.project.qrjs.file.size %}<meta itemprop="fileSize" content="{{site.project.qrjs.file.size}}">{% endif %}
   {% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="availability" href="http://schema.org/InStock">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+  </div>
 </div>
 <p>
   <a href="{{site.origin}}/qr.js" itemprop="name url">qr.js</a> is a pure JavaScript library for generating <a href="http://en.wikipedia.org/wiki/QR_code"><abbr rel="tooltip" title="Quick Response">QR</abbr> codes</a>

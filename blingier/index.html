@@ -8,12 +8,9 @@ microdata: http://schema.org/WebApplication
 share: true
 ---
 <div class="hide">
-  <!-- Google -->
-  <a href="{{site.me.google}}?rel=author"></a>
-  <!-- Thing -->
-  <meta itemprop="description" content="{{page.subtitle}}.">
-  <!-- CreativeWork -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="{{site.me.google}}?rel=author"></a>
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
@@ -23,19 +20,18 @@ share: true
   {% endif %}
   {% if site.project.blingier.published %}<meta itemprop="datePublished" content="{{site.project.blingier.published}}">{% endif %}
   {% if site.project.blingier.updated %}<meta itemprop="dateModified" content="{{site.project.blingier.updated}}">{% endif %}
-  <meta itemprop="isFamilyFriendly" content="true">
-  <meta itemprop="keywords" content="{{page.keywords}}">
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="$0">
-    <meta itemprop="priceCurrency" content="USD">
-    <link itemprop="availability" href="http://schema.org/PreOrder">
-  </div>
-  <!-- SoftwareApplication -->
-  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="description headline" content="{{page.subtitle}}.">
   {% if site.project.blingier.file %}
     {% if site.project.blingier.file.format %}<meta itemprop="fileFormat" content="{{site.project.blingier.file.format}}">{% endif %}
     {% if site.project.blingier.file.size %}<meta itemprop="fileSize" content="{{site.project.blingier.file.size}}">{% endif %}
   {% endif %}
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="availability" href="http://schema.org/PreOrder">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+  </div>
 </div>
 <p>
   <a href="{{site.origin}}/blingier" itemprop="name url">blingier</a> is a <abbr rel="tooltip" title="Uniform Resource Locator">URL</abbr>
