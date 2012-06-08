@@ -3,7 +3,7 @@ subtitle: Ultimate productivity tool with near unlimited uses
 layout: template
 navbar_top_url: ""
 description: Template is a Google Chrome extension that quickly and easily copies info on the current page using a simple and unique template system
-keywords: template, google, chrome, extension, addon, url, copy, clipboard, shortener, customize, clean, browser, markdown, bbcode, html, os, social, network, web, store, download, open, source, neocotic, github
+keywords: template, chrome, safari, firefox, extension, clipboard, shortener, markdown, bbcode, html, social
 microdata: http://schema.org/WebApplication
 share: true
 carousel:
@@ -40,40 +40,33 @@ donation:
   <a href="{{site.me.google}}?rel=author"></a>
   <!-- Thing -->
   <meta itemprop="description" content="Quickly and easily copies info on the current page using a simple and unique template system.">
-  <meta itemprop="url" content="{{site.origin}}/template">
   <meta itemprop="image" content="{{site.origin}}/template/images/logo_72.png">
   <!-- CreativeWork -->
   <div itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alasdair Mercer">
     <meta itemprop="url" content="{{site.origin}}">
   </div>
-  <meta itemprop="dateCreated" content="{{site.project.template.created}}">
+  <meta itemprop="dateCreated datePublished" content="{{site.project.template.created}}">
   {% if site.project.template.updated %}<meta itemprop="dateModified" content="{{site.project.template.updated}}">{% endif %}
-  <meta itemprop="datePublished" content="{{site.project.template.created}}">
   <meta itemprop="copyrightYear" content="{{site.project.template.created | date:'%Y'}}">
   <meta itemprop="isFamilyFriendly" content="true">
   <meta itemprop="keywords" content="{{page.keywords}}">
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="price" content="£0">
-    <meta itemprop="priceCurrency" content="GBP">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
     <link itemprop="availability" href="http://schema.org/InStock">
   </div>
-  <meta itemprop="version" content="{{site.project.template.version}}">
   <!-- SoftwareApplication -->
-  <link itemprop="applicationCategory" href="http://schema.org/OtherApplication">
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
   <meta itemprop="permissions" content="Data you copy and paste">
   <meta itemprop="permissions" content="Your browsing history">
   <meta itemprop="permissions" content="Your physical location">
   <meta itemprop="permissions" content="Your data on all websites">
-  <meta itemprop="releaseNotes" content="{{site.origin}}/template/changes">
   <meta itemprop="screenshot" content="{{site.origin}}/template/images/screenshot_01.png">
-  <link itemprop="SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
-  <meta itemprop="softwareVersion" content="{{site.project.template.version}}">
-  <!-- WebApplication -->
-  <meta itemprop="browsers" content="Google Chrome">
 </div>
 <p>
-  <a href="/template" itemprop="name">Template</a> is an extension for <a href="http://google.com/chrome">Google Chrome</a>
+  <a href="{{site.origin}}/template" itemprop="name url">Template</a> is an extension
+  for <a href="http://google.com/chrome" itemprop="browsers">Google Chrome</a>
   that provides quick and easy access to lots of information about the current
   page and environment;
 </p>
@@ -157,6 +150,9 @@ donation:
   </li>
 </ul>
 <h2><a name="supported-extensions"></a>Supported Extensions</h2>
+<p>
+  These extensions are supported by Template. <a href="/template/faq#supported-extensions">What does this mean?</a>
+</p>
 <ul>
   <li>
     <a href="https://chrome.google.com/webstore/detail/hehijbfgiekmjfkfjpbkbammjbdenadd">IE Tab</a>
@@ -178,14 +174,16 @@ donation:
   about) and why.
 </p>
 <h2><a name="changes"></a>Changes</h1>
-<h3>Version {{site.project.template.version}}</h3>
+<h3>Version <span itemprop="softwareVersion version">{{site.project.template.version}}</span></h3>
 <ul>
   <li>
     <a href="https://github.com/neocotic/template/issues/108">#108</a>: Improve
     inline installation compatibility
   </li>
 </ul>
-<p><a href="/template/changes">View historical changes</a></p>
+<p>
+  <a href="{{site.origin}}/template/changes" itemprop="releaseNotes">View historical changes</a>
+</p>
 <h2><a name="help-desk"></a>Help Desk</h2>
 <p>
   If you have any problems with this extension or would like to give us your feedback
@@ -208,7 +206,7 @@ donation:
 {% include carousel.html %}
 <div class="well">
   <a href="https://chrome.google.com/webstore/detail/dcjnfaoifoefmnbhhlbppaebgnccfddf" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button" itemprop="installUrl"><i class="icon-download-alt icon-white"></i> Install</a>
-  <a href="https://github.com/neocotic/template/zipball/v{{site.project.template.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadURL"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://github.com/neocotic/template/zipball/v{{site.project.template.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/template" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
   {% include donation.html %}
 </div>

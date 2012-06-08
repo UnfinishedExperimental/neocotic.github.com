@@ -3,7 +3,8 @@ subtitle: Remove that pesky blackout from Wikipedia
 layout: undowikipediablackout
 navbar_top_url: ""
 description: Undo Wikipedia Blackout is a Google Chrome extension that removes the Wikipedia blackout
-keywords: undo, remove, wikipedia, blackout, sopa, pipa, google, chrome, extension, addon, web, store, download, open, source, neocotic, github
+keywords: undo, remove, wikipedia, blackout, chrome, extension, sopa, pipa
+microdata: http://schema.org/WebApplication
 share: true
 carousel:
   images:
@@ -20,10 +21,38 @@ donation:
   id: 7D3SUJ62PRV88
   size: large
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="Remove the blackout on Wikipedia.">
+  <meta itemprop="image" content="{{site.origin}}/UndoWikipediaBlackout/images/logo_72.png">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  <meta itemprop="dateCreated datePublished" content="{{site.project.undowikipediablackout.created}}">
+  {% if site.project.undowikipediablackout.updated %}<meta itemprop="dateModified" content="{{site.project.undowikipediablackout.updated}}">{% endif %}
+  <meta itemprop="copyrightYear" content="{{site.project.undowikipediablackout.created | date:'%Y'}}">
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="permissions" content="Your data on neocotic.com">
+  <meta itemprop="permissions" content="Your data on wikipedia.org">
+  <meta itemprop="permissions" content="Your tabs and browsing activity">
+  <meta itemprop="screenshot" content="{{site.origin}}/UndoWikipediaBlackout/images/screenshot_01.png">
+</div>
 <p>
-  <a href="/UndoWikipediaBlackout">Undo Wikipedia Blackout</a> is an extension
-  for <a href="http://google.com/chrome">Google Chrome</a> that simply removes
-  the blackout from <a href="http://wikipedia.org">Wikipedia</a>.
+  <a href="{{site.origin}}/UndoWikipediaBlackout" itemprop="name url">Undo Wikipedia Blackout</a>
+  is an extension for <a href="http://google.com/chrome" itemprop="browsers">Google Chrome</a>
+  that simply removes the blackout from <a href="http://wikipedia.org">Wikipedia</a>.
 </p>
 <p>
   Although this extension <strong>does not support</strong> the <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" rel="tooltip" title="Stop Online Piracy Act">SOPA</a>
@@ -37,7 +66,7 @@ donation:
   about) and why.
 </p>
 <h2><a name="changes"></a>Changes</h1>
-<h3>Version {{site.project.undowikipediablackout.version}}</h3>
+<h3>Version <span itemprop="softwareVersion version">{{site.project.undowikipediablackout.version}}</span></h3>
 <ul>
   <li>
     <a href="https://github.com/neocotic/UndoWikipediaBlackout/issues/8">#8</a>:
@@ -48,7 +77,9 @@ donation:
     Improve inline installation compatibility
   </li>
 </ul>
-<p><a href="/UndoWikipediaBlackout/changes">View historical changes</a></p>
+<p>
+  <a href="{{site.origin}}/UndoWikipediaBlackout/changes" itemprop="releaseNotes">View historical changes</a>
+</p>
 <h2><a name="help-desk"></a>Help Desk</h2>
 <p>
   If you have any problems with this extension or would like to give us your feedback
@@ -60,15 +91,14 @@ donation:
   to get a better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com/">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>. However, I
-  highly recommend reading the <a href="/UndoWikipediaBlackout/faq">frequently asked questions</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
+  However, I highly recommend reading the <a href="/UndoWikipediaBlackout/faq">frequently asked questions</a>.
 </p>
 <h2><a name="screenshots"></a>Screenshots</h2>
 {% include carousel.html %}
 <div class="well">
-  <a href="https://chrome.google.com/webstore/detail/gbgogigdaibinioohdhejplmajgkkfdn" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button"><i class="icon-download-alt icon-white"></i> Install</a>
-  <a href="https://github.com/neocotic/UndoWikipediaBlackout/zipball/{{site.project.undowikipediablackout.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://chrome.google.com/webstore/detail/gbgogigdaibinioohdhejplmajgkkfdn" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button" itemprop="installUrl"><i class="icon-download-alt icon-white"></i> Install</a>
+  <a href="https://github.com/neocotic/UndoWikipediaBlackout/zipball/{{site.project.undowikipediablackout.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/UndoWikipediaBlackout" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
   {% include donation.html %}
 </div>

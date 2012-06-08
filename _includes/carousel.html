@@ -1,3 +1,4 @@
+{% capture ts_param %}_={{site.time | date:'%Y%m%d%H%M%S'}}{% endcapture %}
 {% if page.carousel and page.carousel.images %}
   <div class="row-fluid carousel-container">
     {% if page.carousel.center %}<div class="span2"></div>{% endif %}
@@ -5,7 +6,7 @@
       <div class="carousel-inner">
         {% for image in page.carousel.images %}
           <div class="item{% if forloop.first %} active{% endif %}">
-            <img src="{{image.url}}"{% if image.title %} alt="{{image.title}}"{% endif %}>
+            <img src="{{image.url}}?{{ts_param}}"{% if image.title %} alt="{{image.title}}"{% endif %}>
             {% if image.title or image.caption %}
               <div class="carousel-caption">
                 {% if image.title %}<h4>{{image.title}}</h4>{% endif %}

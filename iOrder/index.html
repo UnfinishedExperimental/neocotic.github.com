@@ -3,7 +3,8 @@ subtitle: Keep up-to-date with your iDevice order
 layout: iorder
 navbar_top_url: ""
 description: iOrder is a Google Chrome extension that keeps users updated with their iDevice order progress
-keywords: iorder, google, chrome, extension, addon, apple, order, track, status, updates, web, store, download, open, source, neocotic, github
+keywords: iorder, chrome, extension, apple, order, track, status, updates
+microdata: http://schema.org/WebApplication
 share: true
 carousel:
   images:
@@ -23,8 +24,37 @@ donation:
   id: 2KJMS2YHQVMWU
   size: large
 ---
+<div class="hide">
+  <!-- Google -->
+  <a href="{{site.me.google}}?rel=author"></a>
+  <!-- Thing -->
+  <meta itemprop="description" content="Keep updated with the progress of your iDevice order.">
+  <meta itemprop="image" content="{{site.origin}}/iOrder/images/logo_72.png">
+  <!-- CreativeWork -->
+  <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alasdair Mercer">
+    <meta itemprop="url" content="{{site.origin}}">
+  </div>
+  <meta itemprop="dateCreated datePublished" content="{{site.project.iorder.created}}">
+  {% if site.project.iorder.updated %}<meta itemprop="dateModified" content="{{site.project.iorder.updated}}">{% endif %}
+  <meta itemprop="copyrightYear" content="{{site.project.iorder.created | date:'%Y'}}">
+  <meta itemprop="isFamilyFriendly" content="true">
+  <meta itemprop="keywords" content="{{page.keywords}}">
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="$0">
+    <meta itemprop="priceCurrency" content="USD">
+    <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+  <!-- SoftwareApplication -->
+  <link itemprop="applicationCategory SoftwareApplicationCategory" href="http://schema.org/OtherApplication">
+  <meta itemprop="permissions" content="Your data on neocotic.com">
+  <meta itemprop="permissions" content="Your data on store.apple.com">
+  <meta itemprop="permissions" content="Your tabs and browsing activity">
+  <meta itemprop="screenshot" content="{{site.origin}}/iOrder/images/screenshot_01.png">
+</div>
 <p>
-  <a href="/iOrder">iOrder</a> is an extension for <a href="http://google.com/chrome">Google Chrome</a>
+  <a href="{{site.origin}}/iOrder" itemprop="name url">iOrder</a> is an extension
+  for <a href="http://google.com/chrome" itemprop="browsers">Google Chrome</a>
   that keeps users updated with their iDevice order progress.
 </p>
 <p>
@@ -40,7 +70,7 @@ donation:
   about) and why.
 </p>
 <h2><a name="changes"></a>Changes</h2>
-<h3>Version {{site.project.iorder.version}}</h3>
+<h3>Version <span itemprop="softwareVersion version">{{site.project.iorder.version}}</span></h3>
 <ul>
   <li>
     <a href="https://github.com/neocotic/iOrder/issues/27">#27</a>: Add donation
@@ -51,7 +81,9 @@ donation:
     installation compatibility
   </li>
 </ul>
-<p><a href="/iOrder/changes">View historical changes</a></p>
+<p>
+  <a href="{{site.origin}}/iOrder/changes" itemprop="releaseNotes">View historical changes</a>
+</p>
 <h2><a name="help-desk"></a>Help Desk</h2>
 <p>
   If you have any problems with this extension or would like to give us your feedback
@@ -63,15 +95,14 @@ donation:
   get a better understanding of what the code is doing.
 </p>
 <p>
-  If that doesn't help, feel free to follow me on <a href="https://twitter.com">Twitter</a>,
-  <a href="https://twitter.com/#!/neocotic" rel="me">@neocotic</a>. However, I highly
-  recommend reading the <a href="/iOrder/faq">frequently asked questions</a>.
+  If that doesn't help, feel free to follow me on Twitter, <a href="{{site.me.twitter}}">@neocotic</a>.
+  However, I highly recommend reading the <a href="/iOrder/faq">frequently asked questions</a>.
 </p>
 <h2><a name="screenshots"></a>Screenshots</h2>
 {% include carousel.html %}
 <div class="well">
-  <a href="https://chrome.google.com/webstore/detail/kflemogpkbophbipihnbcmlplbihbdhb" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button"><i class="icon-download-alt icon-white"></i> Install</a>
-  <a href="https://github.com/neocotic/iOrder/zipball/{{site.project.iorder.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success"><i class="icon-download icon-white"></i> Download</a>
+  <a href="https://chrome.google.com/webstore/detail/kflemogpkbophbipihnbcmlplbihbdhb" rel="tooltip" title="Chrome Web Store" class="btn btn-large btn-primary chrome_install_button" itemprop="installUrl"><i class="icon-download-alt icon-white"></i> Install</a>
+  <a href="https://github.com/neocotic/iOrder/zipball/{{site.project.iorder.version}}" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-success" itemprop="downloadUrl"><i class="icon-download icon-white"></i> Download</a>
   <a href="https://github.com/neocotic/iOrder" rel="tooltip" title="Hosted by GitHub" class="btn btn-large btn-info"><i class="icon-eye-open icon-white"></i> View Source</a>
   {% include donation.html %}
 </div>

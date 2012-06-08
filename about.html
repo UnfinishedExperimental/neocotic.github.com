@@ -7,18 +7,24 @@ description: Read brief summary describing who I am and what I do as well as a l
 keywords: alasdair, mercer, neocotic, personal, information, about, summary, profile, public, description
 microdata: http://schema.org/Person
 ---
+<div class="hide">
+  <meta itemprop="birthDate" content="1987-01-12">
+  <meta itemprop="email" content="{{site.me.email}}">
+  <meta itemprop="gender" content="Male">
+  <meta itemprop="honorificPrefix" content="Mr">
+  <meta itemprop="nationality" content="Scottish">
+</div>
 <div class="row-fluid">
   <div class="span10">
     <img src="{{site.me.gravatar}}?s=120" width="160" height="160" class="gravatar" alt="Photo" itemprop="photo">
     <p>
-      Hi, I'm <span itemprop="name">Alasdair Mercer</span> from
-      <a href="http://maps.google.com/?q=Dunfermline,+Fife,+United+Kingdom" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Dunfermline</span>, <span itemprop="country-name">Scotland</span></a>.
+      Hi, I'm <span itemprop="name">Alasdair Mercer</span> from <a href="http://maps.google.com/?q=Dunfermline,+Fife,+United+Kingdom" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Dunfermline</span>, <span itemprop="country-name">Scotland</span></a>.
       However, you may know me as <em>&quot;<span itemprop="nickname">neocotic</span>&quot;</em>
       if you've seen me online.
     </p>
     <p>
-      I'm currently working as a <span itemprop="title">Java Web Developer</span>
-      for <a href="http://rbs.com" itemprop="affiliation">The Royal Bank of Scotland</a>
+      I'm currently working as a <span itemprop="title jobTitle worksFor">Java Web Developer</span>
+      for <a href="http://rbs.com" itemprop="affiliation memberOf">The Royal Bank of Scotland</a>
       and have been since 2008. Although it allows me to work on extremely large
       projects with some exceptional people I get much more excited working on
       my <a href="{{site.me.github}}" rel="me">personal development projects</a>
