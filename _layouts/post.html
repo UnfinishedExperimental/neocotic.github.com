@@ -3,23 +3,34 @@ layout: default
 share: true
 comments: true
 ---
-<article class="post">
-  <header class="page-header">
-    <h1>{{page.title}}</h1>
-    <p class="lead">
-      by <a href="/about" rel="author">Alasdair Mercer</a> <a href="{{site.me.google}}?rel=author" class="google-profile"><img src="https://www.google.com/images/icons/ui/gprofile_button-16.png" width="16" height="16"></a>
-      on {{page.date | date_to_long_string}}
-    </p>
-  </header>
-  <div class="row-fluid">
-    {{content}}
-  </div><!--/.row-fluid -->
-  <div class="ad-block ad-block-single">
-    <div class="well well-small">
-      {% include ad-728x90.html %}
-    </div><!--/.well -->
-  </div><!--/.ad-block -->
-  <div class="st_container"></div>
-</article>
-<div id="disqus_thread"></div>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
+<div itemscope itemtype="http://schema.org/Blog">
+  <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="hide">
+      <meta itemprop="description headline" content="{{page.description}}">
+      <meta itemprop="copyrightYear" content="{{page.date | date:'%Y'}}">
+      <meta itemprop="dateCreated datePublished" content="{{page.date}}">
+      <meta itemprop="keywords" content="{{page.keywords}}">
+      <meta itemprop="url" content="{{site.origin}}{{page.url}}">
+      <meta itemprop="wordCount" content="{{content | number_of_words}}">
+    </div>
+    <header class="page-header">
+      <h1 itemprop="name">{{page.title}}</h1>
+      <p class="lead" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        by <a href="{{site.origin}}/about" rel="author" itemprop="name url">Alasdair Mercer</a>
+        <a href="{{site.me.google}}?rel=author" class="google-profile"><img src="https://www.google.com/images/icons/ui/gprofile_button-16.png" width="16" height="16"></a>
+        on {{page.date | date_to_long_string}}
+      </p>
+    </header>
+    <div class="row-fluid" itemprop="articleBody text">
+      {{content}}
+    </div><!--/.row-fluid -->
+    <div class="ad-block ad-block-single">
+      <div class="well well-small">
+        {% include ad-728x90.html %}
+      </div><!--/.well -->
+    </div><!--/.ad-block -->
+    <div class="st_container"></div>
+  </article>
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
+</div>

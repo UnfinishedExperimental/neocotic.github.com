@@ -35,20 +35,28 @@ hero:
       title: Share the love!
 comment_count: true
 ---
-<div class="posts">
+<div class="posts" itemscope itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
-    <article class="post">
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <div class="hide">
+        <meta itemprop="description headline" content="{{post.description}}">
+        <meta itemprop="copyrightYear" content="{{post.date | date:'%Y'}}">
+        <meta itemprop="dateCreated datePublished" content="{{post.date}}">
+        <meta itemprop="keywords" content="{{post.keywords}}">
+        <meta itemprop="wordCount" content="{{post.content | number_of_words}}">
+      </div>
       <header class="page-header">
         <div class="pull-right">
           <a href="{{site.origin}}{{post.url}}#disqus_thread" class="btn" data-disqus-identifier="{{post.id}}" rel="tooltip" title="Comments"><i class="icon-comment"></i></a>
         </div>
-        <h2><a href="{{post.url}}">{{post.title}}</a></h2>
-        <p class="lead">
-          by <a href="/about" rel="author">Alasdair Mercer</a> <a href="{{site.me.google}}?rel=author" class="google-profile"><img src="https://www.google.com/images/icons/ui/gprofile_button-16.png" width="16" height="16"></a>
+        <h2><a href="{{post.url}}" itemprop="name url">{{post.title}}</a></h2>
+        <p class="lead" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          by <a href="{{site.origin}}/about" rel="author" itemprop="name url">Alasdair Mercer</a>
+          <a href="{{site.me.google}}?rel=author" class="google-profile"><img src="https://www.google.com/images/icons/ui/gprofile_button-16.png" width="16" height="16"></a>
           on {{post.date | date_to_long_string}}
         </p>
       </header>
-      <div class="row-fluid">
+      <div class="row-fluid" itemprop="articleBody text">
         {{post.content}}
       </div><!--/.row-fluid -->
     </article>
