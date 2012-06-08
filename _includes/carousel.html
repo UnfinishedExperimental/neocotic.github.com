@@ -11,11 +11,12 @@
                 <meta itemprop="name" content="Alasdair Mercer">
                 <meta itemprop="url" content="{{site.origin}}">
               </div>
+              <meta itemprop="contentUrl image url" content="{{image.url}}">
               {% if image.height %}<meta itemprop="height" content="{{image.height}}">{% endif %}
               <meta itemprop="isFamilyFriendly" content="true">
               {% if image.width %}<meta itemprop="width" content="{{image.width}}">{% endif %}
             </div>
-            <img src="{{image.url}}?{{ts_param}}" alt="{% if image.title %}{{image.title}}{% else %}Image {{forloop.index}}{% endif %}" itemprop="contentUrl image url">
+            <img src="{{image.url}}?{{ts_param}}" alt="{% if image.title %}{{image.title}}{% else %}Image {{forloop.index}}{% endif %}">
             {% if image.title or image.caption %}
               <div class="carousel-caption">
                 {% if image.title %}<h4 itemprop="name">{{image.title}}</h4>{% endif %}
