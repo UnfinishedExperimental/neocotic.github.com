@@ -41,7 +41,7 @@ comment_count: true
       <div class="hide">
         <meta itemprop="description headline" content="{{post.description}}">
         <meta itemprop="copyrightYear" content="{{post.date | date:'%Y'}}">
-        <meta itemprop="dateCreated datePublished" content="{{post.date}}">
+        <meta itemprop="dateCreated datePublished" content="{{post.date | date_to_xmlschema}}">
         <meta itemprop="keywords" content="{{post.keywords}}">
         <meta itemprop="wordCount" content="{{post.content | number_of_words}}">
       </div>

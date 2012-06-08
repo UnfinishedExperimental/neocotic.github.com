@@ -8,7 +8,7 @@ comments: true
     <div class="hide">
       <meta itemprop="description headline" content="{{page.description}}">
       <meta itemprop="copyrightYear" content="{{page.date | date:'%Y'}}">
-      <meta itemprop="dateCreated datePublished" content="{{page.date}}">
+      <meta itemprop="dateCreated datePublished" content="{{page.date | date_to_xmlschema}}">
       <meta itemprop="keywords" content="{{page.keywords}}">
       <meta itemprop="url" content="{{site.origin}}{{page.url}}">
       <meta itemprop="wordCount" content="{{content | number_of_words}}">
